@@ -362,6 +362,129 @@
     }
   }
 
+  // 10. LUXURY BRANDED CUSTOM SELECT COMPONENT
+  function initCustomSelects() {
+    const selects = document.querySelectorAll('select.auth-form-input, .contact-field-group select');
+    selects.forEach((select) => {
+      if (select.dataset.customized === 'true') return;
+      select.dataset.customized = 'true';
+
+      // Hide native select visually
+      select.style.display = 'none';
+
+      // Wrapper
+      const wrapper = document.createElement('div');
+      wrapper.className = 'custom-select-wrapper';
+
+      // Trigger button
+      const trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'custom-select-trigger';
+      trigger.setAttribute('aria-haspopup', 'listbox');
+      trigger.setAttribute('aria-expanded', 'false');
+
+      const triggerText = document.createElement('span');
+      triggerText.className = 'custom-select-text';
+      const selectedOption = select.options[select.selectedIndex] || select.options[0];
+      triggerText.textContent = selectedOption ? selectedOption.textContent : 'Select...';
+
+      // SVG chevron arrow
+      const arrow = document.createElement('span');
+      arrow.className = 'custom-select-arrow';
+      arrow.innerHTML = `
+        <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+        </svg>
+      `;
+
+      trigger.appendChild(triggerText);
+      trigger.appendChild(arrow);
+      wrapper.appendChild(trigger);
+
+      // Options menu
+      const optionsMenu = document.createElement('div');
+      optionsMenu.className = 'custom-select-options';
+      optionsMenu.setAttribute('role', 'listbox');
+
+      Array.from(select.options).forEach((opt, index) => {
+        if (opt.disabled && !opt.value) {
+          return;
+        }
+        const optEl = document.createElement('div');
+        optEl.className = 'custom-select-option';
+        if (index === select.selectedIndex) {
+          optEl.classList.add('selected');
+        }
+        optEl.setAttribute('role', 'option');
+        optEl.setAttribute('data-value', opt.value);
+        optEl.textContent = opt.textContent;
+
+        optEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          select.selectedIndex = index;
+          triggerText.textContent = opt.textContent;
+
+          optionsMenu.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'));
+          optEl.classList.add('selected');
+
+          closeDropdown();
+          select.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+
+        optionsMenu.appendChild(optEl);
+      });
+
+      wrapper.appendChild(optionsMenu);
+      select.parentNode.insertBefore(wrapper, select.nextSibling);
+
+      function openDropdown() {
+        document.querySelectorAll('.custom-select-wrapper.open').forEach(w => {
+          if (w !== wrapper) {
+            w.classList.remove('open');
+            const otherTrigger = w.querySelector('.custom-select-trigger');
+            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+        wrapper.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeDropdown() {
+        wrapper.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (wrapper.classList.contains('open')) {
+          closeDropdown();
+        } else {
+          openDropdown();
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.custom-select-wrapper')) {
+        document.querySelectorAll('.custom-select-wrapper.open').forEach(w => {
+          w.classList.remove('open');
+          const t = w.querySelector('.custom-select-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.custom-select-wrapper.open').forEach(w => {
+          w.classList.remove('open');
+          const t = w.querySelector('.custom-select-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  }
+
   // Initialize all features once DOM is ready
   document.addEventListener('DOMContentLoaded', () => {
     initLoader();
@@ -373,5 +496,6 @@
     initAuthModal();
     initActiveNav();
     initScrollAnimations();
+    initCustomSelects();
   });
 })();
