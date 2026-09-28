@@ -573,11 +573,13 @@
       trigger.setAttribute('aria-haspopup', 'dialog');
       trigger.setAttribute('aria-expanded', 'false');
 
+      const defaultPlaceholder = input.getAttribute('placeholder') || 'DD/MM/YYYY';
+
       const triggerText = document.createElement('span');
       triggerText.className = selectedDate ? 'datepicker-value' : 'datepicker-placeholder';
       triggerText.textContent = selectedDate 
         ? `${monthShortNames[selectedDate.getMonth()]} ${selectedDate.getDate()}, ${selectedDate.getFullYear()}`
-        : 'Select Event Date (DD/MM/YYYY)';
+        : defaultPlaceholder;
 
       const triggerIcon = document.createElement('span');
       triggerIcon.className = 'datepicker-icon';
@@ -768,7 +770,7 @@
         selectedDate = null;
         input.value = '';
         triggerText.className = 'datepicker-placeholder';
-        triggerText.textContent = 'Select Event Date (DD/MM/YYYY)';
+        triggerText.textContent = defaultPlaceholder;
         renderCalendar();
         closePopup();
         input.dispatchEvent(new Event('change', { bubbles: true }));

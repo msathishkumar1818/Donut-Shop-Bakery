@@ -1248,6 +1248,11 @@
     grid-template-columns: 1fr;
   }
 
+  .menu-wide-media {
+    height: 220px;
+    max-height: 220px;
+  }
+
   .menu-box-tiers {
     grid-template-columns: 1fr;
   }
@@ -1267,6 +1272,17 @@
     gap: 3rem;
   }
 
+  .event-palette-media {
+    max-height: 480px;
+    width: 100%;
+  }
+
+  .event-palette-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .event-timeline-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1278,6 +1294,10 @@
 }
 
 @media (max-width: 768px) {
+  .event-palette-media {
+    max-height: 320px;
+  }
+
   .event-timeline-grid {
     grid-template-columns: 1fr;
   }
@@ -1370,6 +1390,17 @@
     gap: 3rem;
   }
 
+  .about-chapters-media {
+    max-height: 480px;
+    width: 100%;
+  }
+
+  .about-chapters-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .about-pillars-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1380,6 +1411,10 @@
 }
 
 @media (max-width: 768px) {
+  .about-chapters-media {
+    max-height: 320px;
+  }
+
   .about-pillars-grid {
     grid-template-columns: 1fr;
   }
