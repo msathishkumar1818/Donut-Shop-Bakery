@@ -132,7 +132,7 @@
     const drawer = document.querySelector('.mobile-nav-drawer');
     const accordionToggle = document.querySelector('.mobile-accordion-toggle');
     const accordionContent = document.querySelector('.mobile-accordion-content');
-    const navLinks = document.querySelectorAll('.mobile-nav-link, .mobile-sublink');
+    const allDrawerLinks = drawer ? drawer.querySelectorAll('a') : [];
 
     if (!drawer) return;
 
@@ -147,11 +147,13 @@
     function openDrawer() {
       resetAccordion(); // Always reset Home dropdown when drawer opens
       drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     }
 
     function closeDrawer() {
       drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
       resetAccordion(); // Reset when drawer closes too
     }
@@ -164,9 +166,52 @@
       if (e.target === drawer) closeDrawer();
     });
 
-    // Close drawer + reset accordion when any nav link is clicked
-    navLinks.forEach((link) => {
-      link.addEventListener('click', () => closeDrawer());
+    // Close drawer on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeDrawer();
+      }
+    });
+
+    // Close drawer when screen is resized to desktop width (> 1380px)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1380 && drawer.classList.contains('open')) {
+        closeDrawer();
+      }
+    });
+
+    // Close drawer on Back/Forward Cache page restore or page navigation
+    window.addEventListener('pageshow', () => {
+      closeDrawer();
+    });
+    window.addEventListener('pagehide', () => {
+      closeDrawer();
+    });
+
+    // Close drawer immediately when any link inside drawer is clicked
+    allDrawerLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href) {
+          closeDrawer();
+          return;
+        }
+
+        const targetPath = href.split('/').pop().toLowerCase().split('?')[0].split('#')[0];
+        let currentPath = window.location.pathname.split('/').pop().toLowerCase().split('?')[0].split('#')[0];
+        if (!currentPath || currentPath === '') currentPath = 'index.html';
+
+        // If clicking link to current page, prevent redundant reload, close drawer smoothly & scroll top
+        if (targetPath === currentPath) {
+          e.preventDefault();
+          closeDrawer();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+
+        // For other pages, close drawer immediately before navigating
+        closeDrawer();
+      });
     });
 
     // Accordion toggle: ONLY user click opens/closes it — no auto-open
@@ -182,8 +227,8 @@
       });
     }
 
-    // Initialize: force accordion CLOSED on page load
-    resetAccordion();
+    // Force drawer & accordion strictly CLOSED on initial load
+    closeDrawer();
   }
 
   // 6. SCROLL TO TOP BUTTON
