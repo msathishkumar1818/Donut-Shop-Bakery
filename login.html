@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Atelier Sign In | Velvet Dough Artisan Bakery</title>
+  <meta name="description"
+    content="Sign in to your Velvet Dough Atelier account to reserve warm brioche batches, customize dessert boxes, and access exclusive seasonal drops.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Core Design System CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="login-page-body">
+
+  <!-- BRANDED GLOBAL LOADER -->
+  <div id="global-loader" aria-label="Loading Velvet Dough Atelier">
+    <div class="loader-donut-spinner"></div>
+    <div class="loader-text">Velvet Dough</div>
+  </div>
+
+
+
+  <!-- MAIN DEDICATED LOGIN / REGISTER EXPERIENCE -->
+  <main id="main-content">
+    <section class="login-page-section" aria-label="Member Authentication Portal">
+
+      <!-- Top Right Controls (Dark Mode & RTL Buttons) -->
+      <div class="login-page-actions" aria-label="Page Theme and Language Controls">
+        <div class="header-controls-pill login-controls-pill">
+          <button class="btn-control-icon rtl-toggle-btn" aria-label="Toggle Text Direction (RTL / LTR)"
+            title="Toggle Direction (RTL / LTR)">
+            <span class="rtl-toggle-text">RTL</span>
+          </button>
+
+          <button class="btn-control-icon theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="login-split-card">
+
+        <!-- Left Showcase Panel -->
+        <div class="login-showcase-panel">
+          <div>
+            <!-- Brand Logo with Text and Small Subtext -->
+            <a href="index.html" class="header-brand login-panel-brand" aria-label="Velvet Dough Home">
+              <div class="header-brand-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="2.5 1.5"/>
+                  <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2"/>
+                  <path d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z" fill="#FFFDF8"/>
+                  <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8"/>
+                  <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z" fill="#E58A22"/>
+                  <circle cx="16" cy="18" r="1.1" fill="#FFFDF8"/>
+                  <circle cx="31" cy="17" r="1.1" fill="#FFFDF8"/>
+                </svg>
+              </div>
+              <div class="header-brand-text">
+                <span class="header-brand-title">VELVET DOUGH</span>
+                <span class="header-brand-sub">Artisan Bakery</span>
+              </div>
+            </a>
+
+            <div class="login-showcase-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <span>Velvet Atelier Circle</span>
+            </div>
+            <h1 class="login-showcase-heading">Fresh Brioche &amp; Secret Batch Drops.</h1>
+            <p class="login-showcase-quote">
+              "Join our morning tasting circle to secure private hot-batch allotments, artisanal weekend pastry boxes,
+              and members-only confectionery previews before the front doors unlock."
+            </p>
+          </div>
+
+          <div class="login-perks-list">
+            <div class="login-perk-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Priority access to 7:00 AM &amp; 12:00 PM hot batch drops</span>
+            </div>
+            <div class="login-perk-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>10% privilege on curated monthly dessert boxes</span>
+            </div>
+            <div class="login-perk-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Invitations to seasonal chef kitchen tastings</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Form Panel -->
+        <div class="login-form-panel">
+          <!-- Mobile Brand Logo Header (Visible on smaller screens when showcase panel is hidden) -->
+          <div class="login-mobile-brand">
+            <a href="index.html" class="header-brand" aria-label="Velvet Dough Home">
+              <div class="header-brand-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="2.5 1.5"/>
+                  <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2"/>
+                  <path d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z" fill="#FFFDF8"/>
+                  <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8"/>
+                  <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z" fill="#E58A22"/>
+                  <circle cx="16" cy="18" r="1.1" fill="#FFFDF8"/>
+                  <circle cx="31" cy="17" r="1.1" fill="#FFFDF8"/>
+                </svg>
+              </div>
+              <div class="header-brand-text">
+                <span class="header-brand-title">VELVET DOUGH</span>
+                <span class="header-brand-sub">Artisan Bakery</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="login-tabs-bar" role="tablist">
+            <button class="login-tab-btn active" id="tabSignIn" role="tab" aria-selected="true" type="button">Sign
+              In</button>
+            <button class="login-tab-btn" id="tabRegister" role="tab" aria-selected="false" type="button">Create
+              Account</button>
+          </div>
+
+          <!-- Social Quick Auth -->
+          <div class="social-login-grid">
+            <button type="button" class="btn-social-auth" aria-label="Continue with Google">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  fill="#4285F4" />
+                <path
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  fill="#34A853" />
+                <path
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                  fill="#FBBC05" />
+                <path
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                  fill="#EA4335" />
+              </svg>
+              <span>Google</span>
+            </button>
+            <button type="button" class="btn-social-auth" aria-label="Continue with Apple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.67-.82 1.13-1.96.99-3.11-1 .04-2.18.66-2.87 1.48-.61.71-1.15 1.87-.99 2.98 1.12.09 2.22-.55 2.87-1.35z" />
+              </svg>
+              <span>Apple</span>
+            </button>
+          </div>
+
+          <div class="login-divider">
+            <span>or continue with email</span>
+          </div>
+
+          <!-- SIGN IN FORM -->
+          <form id="signInForm" onsubmit="event.preventDefault(); alert('Welcome back to Velvet Dough Atelier!');">
+            <div class="login-form-field">
+              <label for="signinEmail" class="login-form-label">Email Address</label>
+              <input type="email" id="signinEmail" class="login-form-input" placeholder="connoisseur@velvetdough.com"
+                required autocomplete="email">
+            </div>
+
+            <div class="login-form-field">
+              <label for="signinPassword" class="login-form-label">Password</label>
+              <input type="password" id="signinPassword" class="login-form-input"
+                placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required autocomplete="current-password">
+            </div>
+
+            <div class="login-options-row">
+              <label class="login-remember">
+                <input type="checkbox" checked style="accent-color:var(--color-accent);">
+                <span>Stay signed in</span>
+              </label>
+              <a href="#" class="login-forgot-link">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn-login-submit">Sign In to Atelier</button>
+          </form>
+
+          <!-- REGISTER FORM (Hidden initially) -->
+          <form id="registerForm"
+            onsubmit="event.preventDefault(); alert('Account created! Welcome to Velvet Dough Atelier.');"
+            style="display:none;">
+            <div class="login-form-field">
+              <label for="regName" class="login-form-label">Full Name</label>
+              <input type="text" id="regName" class="login-form-input" placeholder="Eleanor Vance" required
+                autocomplete="name">
+            </div>
+
+            <div class="login-form-field">
+              <label for="regEmail" class="login-form-label">Email Address</label>
+              <input type="email" id="regEmail" class="login-form-input" placeholder="eleanor@atelier.com" required
+                autocomplete="email">
+            </div>
+
+            <div class="login-form-field">
+              <label for="regPassword" class="login-form-label">Create Password</label>
+              <input type="password" id="regPassword" class="login-form-input" placeholder="Minimum 8 characters"
+                required autocomplete="new-password">
+            </div>
+
+            <div class="login-options-row">
+              <label class="login-remember">
+                <input type="checkbox" required checked style="accent-color:var(--color-accent);">
+                <span>I agree to the Atelier Guild terms</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-login-submit">Create Atelier Account</button>
+          </form>
+
+          <div class="login-back-home">
+            <span id="switchPrompt">Don't have an account yet? </span>
+            <a href="#" id="toggleAccountMode">Create account</a>
+            <div style="margin-top:0.75rem;">
+              <a href="index.html">&larr; Return to Bakery Home</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+
+
+  <!-- Core JavaScript -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Dedicated Login Tab Switching Script -->
+  <script>
+    (function () {
+      const tabSignIn = document.getElementById('tabSignIn');
+      const tabRegister = document.getElementById('tabRegister');
+      const signInForm = document.getElementById('signInForm');
+      const registerForm = document.getElementById('registerForm');
+      const toggleAccountMode = document.getElementById('toggleAccountMode');
+      const switchPrompt = document.getElementById('switchPrompt');
+
+      function showSignIn() {
+        tabSignIn.classList.add('active');
+        tabSignIn.setAttribute('aria-selected', 'true');
+        tabRegister.classList.remove('active');
+        tabRegister.setAttribute('aria-selected', 'false');
+        signInForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        switchPrompt.textContent = "Don't have an account yet? ";
+        toggleAccountMode.textContent = "Create account";
+      }
+
+      function showRegister() {
+        tabRegister.classList.add('active');
+        tabRegister.setAttribute('aria-selected', 'true');
+        tabSignIn.classList.remove('active');
+        tabSignIn.setAttribute('aria-selected', 'false');
+        signInForm.style.display = 'none';
+        registerForm.style.display = 'block';
+        switchPrompt.textContent = "Already have an atelier account? ";
+        toggleAccountMode.textContent = "Sign in here";
+      }
+
+      if (tabSignIn && tabRegister) {
+        tabSignIn.addEventListener('click', showSignIn);
+        tabRegister.addEventListener('click', showRegister);
+      }
+
+      if (toggleAccountMode) {
+        toggleAccountMode.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (tabSignIn.classList.contains('active')) {
+            showRegister();
+          } else {
+            showSignIn();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

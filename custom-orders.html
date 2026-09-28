@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Orders & Event Catering | Velvet Dough Artisan Bakery</title>
+  <meta name="description"
+    content="Custom brioche donut walls, tiered dessert towers, and bespoke monogram favors for luxury weddings, galas, and corporate celebrations.">
+
+  <!-- Core Design System CSS -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- BRANDED GLOBAL LOADER -->
+  <div id="global-loader" aria-label="Loading Velvet Dough Custom Orders">
+    <div class="loader-donut-spinner"></div>
+    <div class="loader-text">Velvet Dough</div>
+  </div>
+
+  <!-- FIXED SLIM HEADER -->
+  <header class="site-header" id="main-header">
+    <div class="site-container header-inner">
+
+      <!-- Brand Logo + Identity -->
+      <a href="index.html" class="header-brand" aria-label="Velvet Dough Home">
+        <div class="header-brand-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round"
+              stroke-dasharray="2.5 1.5" />
+            <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2" />
+            <path
+              d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z"
+              fill="#FFFDF8" />
+            <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8" />
+            <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z"
+              fill="#E58A22" />
+            <circle cx="16" cy="18" r="1.1" fill="#FFFDF8" />
+            <circle cx="31" cy="17" r="1.1" fill="#FFFDF8" />
+          </svg>
+        </div>
+        <div class="header-brand-text">
+          <span class="header-brand-title">VELVET DOUGH</span>
+          <span class="header-brand-sub">Artisan Bakery</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation: EXACTLY 6 PRIMARY ITEMS -->
+      <nav class="header-nav" aria-label="Primary Navigation">
+        <!-- 1. Home (Click-only Dropdown) -->
+        <div class="nav-item-dropdown">
+          <button class="dropdown-toggle" id="homeDropdownBtn" aria-haspopup="true" aria-expanded="false" type="button">
+            <span>Home</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="dropdown-menu" id="homeDropdownMenu" aria-labelledby="homeDropdownBtn">
+            <a href="index.html" class="dropdown-link">Home 1 (Main)</a>
+            <a href="home-2.html" class="dropdown-link">Home 2 (Editorial)</a>
+          </div>
+        </div>
+
+        <!-- 2. Menu -->
+        <a href="menu.html" class="nav-link">Menu</a>
+
+        <!-- 3. Custom Orders (Active) -->
+        <a href="custom-orders.html" class="nav-link active">Custom Orders</a>
+
+        <!-- 4. Locations -->
+        <a href="locations.html" class="nav-link">Locations</a>
+
+        <!-- 5. About (Mandatory) -->
+        <a href="about.html" class="nav-link">About</a>
+
+        <!-- 6. Contact -->
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop Header Controls: RTL, Dark Mode, Member Login -->
+      <div class="header-actions">
+        <div class="header-controls-pill">
+          <button class="btn-control-icon rtl-toggle-btn" aria-label="Toggle Text Direction (RTL / LTR)"
+            title="Toggle Direction (RTL / LTR)">
+            <span class="rtl-toggle-text">RTL</span>
+          </button>
+
+          <button class="btn-control-icon theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </div>
+
+        <a href="login.html" class="btn-login" aria-label="Member Sign In">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <button class="btn-menu-toggle" aria-label="Open Navigation Menu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE OFFCANVAS DRAWER -->
+  <aside class="mobile-nav-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="header-brand">
+          <div class="header-brand-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round"
+                stroke-dasharray="2.5 1.5" />
+              <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2" />
+              <path
+                d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z"
+                fill="#FFFDF8" />
+              <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8" />
+              <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z"
+                fill="#E58A22" />
+            </svg>
+          </div>
+          <div class="header-brand-text">
+            <span class="header-brand-title">VELVET DOUGH</span>
+            <span class="header-brand-sub">Artisan Bakery</span>
+          </div>
+        </a>
+        <button class="mobile-close-btn" aria-label="Close Navigation Menu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width:20px;height:20px;">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-body">
+        <div class="mobile-accordion-wrapper">
+          <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+            <span>Home</span>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="index.html" class="mobile-sublink">Home 1 (Main)</a>
+            <a href="home-2.html" class="mobile-sublink">Home 2 (Editorial)</a>
+          </div>
+        </div>
+
+        <a href="menu.html" class="mobile-nav-link">Menu</a>
+        <a href="custom-orders.html" class="mobile-nav-link active">Custom Orders</a>
+        <a href="locations.html" class="mobile-nav-link">Locations</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <a href="login.html" class="mobile-drawer-login">Sign In / Login</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- AUTH MODAL -->
+  <div class="auth-modal-overlay" id="authModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="auth-modal-card">
+      <button class="auth-modal-close" aria-label="Close Dialog" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" style="width:18px;height:18px;">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div class="auth-modal-header">
+        <h3 style="font-size:1.4rem;">Event Host Login</h3>
+        <p style="font-size:0.88rem;margin-top:0.35rem;">Manage event catering quotes, date holds, and tasting logs.</p>
+        <div class="auth-modal-tabs">
+          <button class="auth-tab-btn active" data-tab="login" type="button">Sign In</button>
+          <button class="auth-tab-btn" data-tab="register" type="button">Create Account</button>
+        </div>
+      </div>
+      <div class="auth-modal-body">
+        <form id="modal-login-form"
+          onsubmit="event.preventDefault(); alert('Signed in!'); document.querySelector('.auth-modal-overlay').classList.remove('open');">
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="co-login-email">Email Address</label>
+            <input class="auth-form-input" type="email" id="co-login-email" placeholder="host@weddingplanner.com"
+              required>
+          </div>
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="co-login-password">Password</label>
+            <input class="auth-form-input" type="password" id="co-login-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="auth-submit-btn">Sign In to Event Portal</button>
+        </form>
+
+        <form id="modal-register-form" style="display:none;"
+          onsubmit="event.preventDefault(); alert('Account registered!'); document.querySelector('.auth-modal-overlay').classList.remove('open');">
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="co-reg-name">Planner / Host Name</label>
+            <input class="auth-form-input" type="text" id="co-reg-name" placeholder="Claire Sterling" required>
+          </div>
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="co-reg-email">Email Address</label>
+            <input class="auth-form-input" type="email" id="co-reg-email" placeholder="claire@events.com" required>
+          </div>
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="co-reg-password">Password</label>
+            <input class="auth-form-input" type="password" id="co-reg-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="auth-submit-btn">Register as Event Partner</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN CONTENT: EXACTLY 5 MAIN CONTENT SECTIONS (INNER PAGE: CUSTOM ORDERS)
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- SECTION 1: BESPOKE EVENT HERO BANNER (Matches Menu Hero Banner Style & Height) -->
+    <section class="event-hero-section" id="event-hero">
+      <div class="site-container">
+        <span class="hero-badge" style="background:rgba(229,138,34,0.18);">
+          <span class="hero-badge-dot"></span>
+          <span>Events &amp; Bespoke Catering Atelier</span>
+        </span>
+        <h1 style="font-size:3.2rem;color:#FFFDF8;margin:0.75rem 0 1rem 0;line-height:1.15;">
+          Bespoke Donut Walls &amp; Sculptural Catering
+        </h1>
+        <p style="font-size:1.1rem;color:var(--color-beige);max-width:640px;margin:0 auto;line-height:1.6;">
+          Transform your reception or gala with our artisan dessert installations, matched precisely to your floral
+          palette and event branding. Select an installation style:
+        </p>
+
+        <!-- Quick Jumper Navigation Tabs (Identical to Menu Filter Tabs) -->
+        <div class="menu-filter-nav">
+          <a href="#installation-formats" class="menu-filter-pill active">Installation Styles</a>
+          <a href="#custom-studio" class="menu-filter-pill">Color Palette</a>
+          <a href="#catering-timeline" class="menu-filter-pill">4-Step Planning</a>
+          <a href="#event-booking-cta" class="menu-filter-pill">Reserve Event Date</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: 3 ARCHITECTURAL INSTALLATION STYLES -->
+    <section class="event-formats-section" id="installation-formats">
+      <div class="site-container">
+        <div class="section-head">
+          <span class="section-eyebrow">Signature Installations</span>
+          <h2 class="section-title">Three Architectural Formats</h2>
+          <p class="section-subtitle">
+            Every format is engineered for dramatic visual impact and effortless guest self-service.
+          </p>
+        </div>
+
+        <div class="event-formats-grid">
+          <!-- Format 1 -->
+          <article class="event-format-card">
+            <div class="event-format-media">
+              <img src="assets/images/products/p31.jpg" alt="Grand wooden pegboard donut wall display" loading="lazy">
+              <span class="event-capacity-tag">150 – 500 Guests</span>
+            </div>
+            <div class="event-format-body">
+              <h3 class="event-format-title">The Grand Pegboard Wall</h3>
+              <p class="event-format-desc">
+                Handcrafted solid oak pegboard holding up to 240 fresh brioche rings simultaneously with custom branded
+                acrylic header signage.
+              </p>
+              <ul class="event-format-features">
+                <li class="event-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>Includes live restock trays</span>
+                </li>
+                <li class="event-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>On-site styling & easel stand</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Format 2 -->
+          <article class="event-format-card">
+            <div class="event-format-media">
+              <img src="assets/images/products/p32.jpg" alt="Tiered spiral dessert tower of glazed brioche donuts"
+                loading="lazy">
+              <span class="event-capacity-tag">50 – 150 Guests</span>
+            </div>
+            <div class="event-format-body">
+              <h3 class="event-format-title">The Spiral Brioche Tower</h3>
+              <p class="event-format-desc">
+                A 7-tier architectural centerpiece featuring cascading color gradients, edible florals, and organic gold
+                dust accents.
+              </p>
+              <ul class="event-format-features">
+                <li class="event-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>360-degree guest access</span>
+                </li>
+                <li class="event-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>Compact tabletop footprint</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Format 3 -->
+          <article class="event-format-card">
+            <div class="event-format-media">
+              <img src="assets/images/products/p33.jpg"
+                alt="Individually boxed wedding favor donut with personalized ribbon" loading="lazy">
+              <span class="event-capacity-tag">25 – 300 Guests</span>
+            </div>
+            <div class="event-format-body">
+              <h3 class="event-format-title">Monogrammed Favor Boxes</h3>
+              <p class="event-format-desc">
+                Individual embossed gift boxes with silk grosgrain ribbon, personalized wax seal stamps, and custom
+                flavor notes.
+              </p>
+              <ul class="event-format-features">
+                <li class="event-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>Individual guest takeaway</span>
+                </li>
+                <li class="event-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>Personalized couple monograms</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: BESPOKE PALETTE & FLAVOR CUSTOMIZATION STUDIO -->
+    <section class="event-palette-section" id="custom-studio">
+      <div class="site-container">
+        <div class="event-palette-grid">
+          <div>
+            <span class="section-eyebrow">The Atelier Studio</span>
+            <h2 class="section-title">Palette Matching &amp; Garnishes</h2>
+            <p style="font-size:1.05rem;color:var(--text-muted);line-height:1.65;margin-bottom:1.5rem;">
+              Provide your wedding swatch cards or corporate brand guidelines. Our master confectioners formulate
+              natural botanical glazes to complement your aesthetic precisely.
+            </p>
+
+            <div class="event-swatches-box">
+              <div class="event-swatch-item">
+                <span class="swatch-circle" style="background-color:#E58A22;"></span>
+                <span style="font-size:0.84rem;font-weight:700;color:var(--text-main);">Golden Amber</span>
+              </div>
+              <div class="event-swatch-item">
+                <span class="swatch-circle" style="background-color:#F2C8C9;"></span>
+                <span style="font-size:0.84rem;font-weight:700;color:var(--text-main);">Blush Peony</span>
+              </div>
+              <div class="event-swatch-item">
+                <span class="swatch-circle" style="background-color:#3E241A;"></span>
+                <span style="font-size:0.84rem;font-weight:700;color:var(--text-main);">Espresso Cocoa</span>
+              </div>
+              <div class="event-swatch-item">
+                <span class="swatch-circle" style="background-color:#EAD8CC;"></span>
+                <span style="font-size:0.84rem;font-weight:700;color:var(--text-main);">Vanilla Cream</span>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+              <div>
+                <strong style="display:block;font-size:1.05rem;color:var(--text-main);">Edible 24k Gold</strong>
+                <span style="font-size:0.85rem;color:var(--text-muted);">Certified culinary leaf</span>
+              </div>
+              <div>
+                <strong style="display:block;font-size:1.05rem;color:var(--text-main);">Pressed Florals</strong>
+                <span style="font-size:0.85rem;color:var(--text-muted);">Organic pansies &amp; rose petals</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-warm);border:1px solid var(--border-subtle);">
+            <img src="assets/images/sections/p34.jpg"
+              alt="Pastry chef delicately applying edible garnishes on custom event donuts" width="600" height="420"
+              loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: 4-STEP CONCIERGE TIMELINE -->
+    <section class="event-timeline-section" id="catering-timeline">
+      <div class="site-container">
+        <div class="section-head">
+          <span class="section-eyebrow">Seamless Execution</span>
+          <h2 class="section-title">The Four-Step Event Concierge</h2>
+          <p class="section-subtitle">
+            From your first tasting to on-site assembly, our dedicated event director manages every detail.
+          </p>
+        </div>
+
+        <div class="event-timeline-grid">
+          <!-- Step 1 -->
+          <div class="event-timeline-card">
+            <span class="event-timeline-step">Step 01</span>
+            <h3 class="event-timeline-title">Date Hold Inquiry</h3>
+            <p class="event-timeline-desc">
+              Submit your guest count and date. We place a 7-day complimentary hold on your event weekend.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="event-timeline-card">
+            <span class="event-timeline-step">Step 02</span>
+            <h3 class="event-timeline-title">Tasting Box </h3>
+            <p class="event-timeline-desc">
+              Receive a curated tasting box of 6 candidate brioche flavors to sample comfortably with your team.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="event-timeline-card">
+            <span class="event-timeline-step">Step 03</span>
+            <h3 class="event-timeline-title">Design Approval</h3>
+            <p class="event-timeline-desc">
+              Confirm glaze colors, custom signage, rental walls, and arrival schedules with your coordinator.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="event-timeline-card">
+            <span class="event-timeline-step">Step 04</span>
+            <h3 class="event-timeline-title">White Glove </h3>
+            <p class="event-timeline-desc">
+              Our team arrives 90 minutes before guest doors open to assemble, style, and polish the installation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: EVENT INQUIRIES & BOOKING CTA FORM (Strict Rule: Last Section is CTA) -->
+    <section class="event-booking-cta-section" id="event-booking-cta">
+      <div class="site-container">
+        <div class="event-booking-grid">
+          <div>
+            <span class="section-eyebrow" style="color:var(--color-accent);">Reserve Your Date</span>
+            <h2 style="font-size:2.85rem;color:#FFFDF8;line-height:1.2;margin:0.5rem 0 1.25rem 0;">
+              Let's Create an Unforgettable Morning or Evening.
+            </h2>
+            <p style="font-size:1.05rem;color:var(--color-beige);line-height:1.65;margin-bottom:2rem;">
+              We accept a limited number of event installations each weekend to protect our baking quality. Fill out the
+              reservation inquiry and Elena’s catering concierge will respond within 4 business hours.
+            </p>
+            <div style="display:flex;flex-direction:column;gap:1rem;">
+              <div style="display:flex;align-items:center;gap:0.75rem;">
+                <svg viewBox="0 0 20 20" fill="currentColor" style="width:20px;height:20px;color:var(--color-accent);">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Full delivery, easel rental &amp; on-site styling included</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:0.75rem;">
+                <svg viewBox="0 0 20 20" fill="currentColor" style="width:20px;height:20px;color:var(--color-accent);">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Fresh morning baking guarantee on event day</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-form-card">
+            <h3 style="font-size:1.5rem;margin-bottom:0.35rem;">Catering Inquiry Form</h3>
+            <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:1.5rem;">Fast response guaranteed within 4
+              hours.</p>
+
+            <form
+              onsubmit="event.preventDefault(); alert('Catering inquiry submitted! Our event director will contact you within 4 hours.');">
+              <div class="event-form-row">
+                <div class="auth-form-group">
+                  <label class="auth-form-label" for="ev-name">Your Full Name</label>
+                  <input class="auth-form-input" type="text" id="ev-name" placeholder="Claire Sterling" required>
+                </div>
+                <div class="auth-form-group">
+                  <label class="auth-form-label" for="ev-email">Email Address</label>
+                  <input class="auth-form-input" type="email" id="ev-email" placeholder="claire@events.com" required>
+                </div>
+              </div>
+
+              <div class="event-form-row">
+                <div class="auth-form-group">
+                  <label class="auth-form-label" for="ev-date">Event Date</label>
+                  <input class="auth-form-input" type="date" id="ev-date" required>
+                </div>
+                <div class="auth-form-group">
+                  <label class="auth-form-label" for="ev-guests">Estimated Guests</label>
+                  <select class="auth-form-input" id="ev-guests" required style="cursor:pointer;">
+                    <option value="50-100">50 – 100 Guests</option>
+                    <option value="100-250">100 – 250 Guests</option>
+                    <option value="250-500">250 – 500 Guests</option>
+                    <option value="500+">500+ Large Gala</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="ev-format">Desired Installation Style</label>
+                <select class="auth-form-input" id="ev-format" required style="cursor:pointer;">
+                  <option value="pegboard">The Grand Pegboard Wall</option>
+                  <option value="tower">The Spiral Brioche Tower</option>
+                  <option value="favors">Personalized Favor Boxes</option>
+                  <option value="combo">Combination Package</option>
+                </select>
+              </div>
+
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="ev-notes">Event Location &amp; Theme Details</label>
+                <textarea class="auth-form-input" id="ev-notes" rows="3"
+                  placeholder="Tell us about your venue, color palette, or special flavor requests..."></textarea>
+              </div>
+
+              <button type="submit" class="auth-submit-btn">Submit Event Request</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER -->
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div>
+          <a href="index.html" class="footer-brand" aria-label="Velvet Dough Home">
+            <div class="footer-brand-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round"
+                  stroke-dasharray="2.5 1.5" />
+                <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2" />
+                <path
+                  d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z"
+                  fill="#FFFDF8" />
+                <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8" />
+                <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z"
+                  fill="#E58A22" />
+                <circle cx="16" cy="18" r="1.1" fill="#FFFDF8" />
+                <circle cx="31" cy="17" r="1.1" fill="#FFFDF8" />
+              </svg>
+            </div>
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">VELVET DOUGH</span>
+              <span class="footer-brand-sub">Artisan Bakery</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Artisanal brioche donuts and slow-fermented bakery goods, handcrafted every morning from scratch using
+            organic pasture butter and seasonal infusions.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="footer-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="footer-nav-link">Home 1 (Main)</a></li>
+            <li><a href="home-2.html" class="footer-nav-link">Home 2 (Editorial)</a></li>
+            <li><a href="menu.html" class="footer-nav-link">Daily Flavors</a></li>
+            <li><a href="custom-orders.html" class="footer-nav-link">Custom Events</a></li>
+            <li><a href="locations.html" class="footer-nav-link">Locations &amp; Hours</a></li>
+            <li><a href="about.html" class="footer-nav-link">About Bakery</a></li>
+            <li><a href="contact.html" class="footer-nav-link">Contact &amp; Catering</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hours -->
+        <div>
+          <h4 class="footer-col-title">Baking Hours</h4>
+          <div class="footer-hours-item">
+            <span>Mon – Fri</span>
+            <span>6:30 AM – 4:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Saturday</span>
+            <span>7:00 AM – 5:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Sunday</span>
+            <span>7:30 AM – 3:00 PM</span>
+          </div>
+          <div class="footer-hours-item" style="margin-top:0.75rem;">
+            <span>Hot Batch Times:</span>
+            <span>7 AM & 12 PM</span>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div>
+          <h4 class="footer-col-title">Flavor Drops</h4>
+          <p style="font-size:0.88rem;color:var(--color-beige);margin-bottom:1rem;">
+            Get early alerts for limited weekend doughnut batches and secret menu drops.
+          </p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed to Velvet Dough alerts!');"
+            style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <input type="email" placeholder="Your email" required
+              style="flex:1;min-width:160px;padding:0.6rem 0.85rem;background:rgba(248,242,232,0.1);border:1px solid rgba(234,216,204,0.25);border-radius:var(--radius-full);color:#FFFDF8;font-size:0.88rem;outline:none;">
+            <button type="submit" class="btn-primary" style="padding:0.6rem 1.1rem;font-size:0.85rem;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 Velvet Dough Bakery &amp; Artisan Doughnuts. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-nav-link">Privacy Policy</a>
+          <a href="#" class="footer-nav-link">Terms of Service</a>
+          <a href="#" class="footer-nav-link">Allergen Information</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="btn-scroll-top" aria-label="Scroll to top" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <!-- Core JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

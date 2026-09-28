@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakery Locations & Hours | Velvet Dough Artisan Bakeries</title>
+  <meta name="description"
+    content="Visit Velvet Dough at our Pearl District Atelier & Espresso Bar or our Hawthorne Garden Courtyard. Fresh hot batches baked at 7:00 AM & 12:00 PM daily.">
+
+  <!-- Core Design System CSS -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- BRANDED GLOBAL LOADER -->
+  <div id="global-loader" aria-label="Loading Velvet Dough Locations">
+    <div class="loader-donut-spinner"></div>
+    <div class="loader-text">Velvet Dough</div>
+  </div>
+
+  <!-- FIXED SLIM HEADER -->
+  <header class="site-header" id="main-header">
+    <div class="site-container header-inner">
+
+      <!-- Brand Logo + Identity -->
+      <a href="index.html" class="header-brand" aria-label="Velvet Dough Home">
+        <div class="header-brand-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round"
+              stroke-dasharray="2.5 1.5" />
+            <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2" />
+            <path
+              d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z"
+              fill="#FFFDF8" />
+            <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8" />
+            <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z"
+              fill="#E58A22" />
+            <circle cx="16" cy="18" r="1.1" fill="#FFFDF8" />
+            <circle cx="31" cy="17" r="1.1" fill="#FFFDF8" />
+          </svg>
+        </div>
+        <div class="header-brand-text">
+          <span class="header-brand-title">VELVET DOUGH</span>
+          <span class="header-brand-sub">Artisan Bakery</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation: EXACTLY 6 PRIMARY ITEMS -->
+      <nav class="header-nav" aria-label="Primary Navigation">
+        <!-- 1. Home (Click-only Dropdown) -->
+        <div class="nav-item-dropdown">
+          <button class="dropdown-toggle" id="homeDropdownBtn" aria-haspopup="true" aria-expanded="false" type="button">
+            <span>Home</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="dropdown-menu" id="homeDropdownMenu" aria-labelledby="homeDropdownBtn">
+            <a href="index.html" class="dropdown-link">Home 1 (Main)</a>
+            <a href="home-2.html" class="dropdown-link">Home 2 (Editorial)</a>
+          </div>
+        </div>
+
+        <!-- 2. Menu -->
+        <a href="menu.html" class="nav-link">Menu</a>
+
+        <!-- 3. Custom Orders -->
+        <a href="custom-orders.html" class="nav-link">Custom Orders</a>
+
+        <!-- 4. Locations (Active) -->
+        <a href="locations.html" class="nav-link active">Locations</a>
+
+        <!-- 5. About (Mandatory) -->
+        <a href="about.html" class="nav-link">About</a>
+
+        <!-- 6. Contact -->
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop Header Controls: RTL, Dark Mode, Member Login -->
+      <div class="header-actions">
+        <div class="header-controls-pill">
+          <button class="btn-control-icon rtl-toggle-btn" aria-label="Toggle Text Direction (RTL / LTR)"
+            title="Toggle Direction (RTL / LTR)">
+            <span class="rtl-toggle-text">RTL</span>
+          </button>
+
+          <button class="btn-control-icon theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </div>
+
+        <a href="login.html" class="btn-login" aria-label="Member Sign In">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <button class="btn-menu-toggle" aria-label="Open Navigation Menu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE OFFCANVAS DRAWER -->
+  <aside class="mobile-nav-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="header-brand">
+          <div class="header-brand-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round"
+                stroke-dasharray="2.5 1.5" />
+              <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2" />
+              <path
+                d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z"
+                fill="#FFFDF8" />
+              <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8" />
+              <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z"
+                fill="#E58A22" />
+            </svg>
+          </div>
+          <div class="header-brand-text">
+            <span class="header-brand-title">VELVET DOUGH</span>
+            <span class="header-brand-sub">Artisan Bakery</span>
+          </div>
+        </a>
+        <button class="mobile-close-btn" aria-label="Close Navigation Menu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width:20px;height:20px;">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-body">
+        <div class="mobile-accordion-wrapper">
+          <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+            <span>Home</span>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="index.html" class="mobile-sublink">Home 1 (Main)</a>
+            <a href="home-2.html" class="mobile-sublink">Home 2 (Editorial)</a>
+          </div>
+        </div>
+
+        <a href="menu.html" class="mobile-nav-link">Menu</a>
+        <a href="custom-orders.html" class="mobile-nav-link">Custom Orders</a>
+        <a href="locations.html" class="mobile-nav-link active">Locations</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <a href="login.html" class="mobile-drawer-login">Sign In / Login</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- AUTH MODAL -->
+  <div class="auth-modal-overlay" id="authModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="auth-modal-card">
+      <button class="auth-modal-close" aria-label="Close Dialog" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" style="width:18px;height:18px;">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div class="auth-modal-header">
+        <h3 style="font-size:1.4rem;">Velvet Club Login</h3>
+        <p style="font-size:0.88rem;margin-top:0.35rem;">Access curbside pickup lockers and table reservations.</p>
+        <div class="auth-modal-tabs">
+          <button class="auth-tab-btn active" data-tab="login" type="button">Sign In</button>
+          <button class="auth-tab-btn" data-tab="register" type="button">Create Account</button>
+        </div>
+      </div>
+      <div class="auth-modal-body">
+        <form id="modal-login-form"
+          onsubmit="event.preventDefault(); alert('Signed in!'); document.querySelector('.auth-modal-overlay').classList.remove('open');">
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="loc-login-email">Email Address</label>
+            <input class="auth-form-input" type="email" id="loc-login-email" placeholder="patron@velvetdough.com"
+              required>
+          </div>
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="loc-login-password">Password</label>
+            <input class="auth-form-input" type="password" id="loc-login-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="auth-submit-btn">Sign In</button>
+        </form>
+
+        <form id="modal-register-form" style="display:none;"
+          onsubmit="event.preventDefault(); alert('Registered!'); document.querySelector('.auth-modal-overlay').classList.remove('open');">
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="loc-reg-name">Full Name</label>
+            <input class="auth-form-input" type="text" id="loc-reg-name" placeholder="Evelyn Cross" required>
+          </div>
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="loc-reg-email">Email Address</label>
+            <input class="auth-form-input" type="email" id="loc-reg-email" placeholder="evelyn@velvetdough.com"
+              required>
+          </div>
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="loc-reg-password">Password</label>
+            <input class="auth-form-input" type="password" id="loc-reg-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="auth-submit-btn">Join Rewards Club</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN CONTENT: EXACTLY 5 MAIN CONTENT SECTIONS (INNER PAGE: LOCATIONS)
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- SECTION 1: STOREFRONT HERO & STATUS TICKER -->
+    <section class="locations-hero-section" id="locations-hero">
+      <div class="site-container">
+        <span class="hero-badge" style="background:rgba(229,138,34,0.18);">
+          <span class="hero-badge-dot"></span>
+          <span>Both Flagships Open Daily</span>
+        </span>
+        <h1 style="font-size:3.3rem;color:#FFFDF8;margin:0.85rem 0 1rem 0;line-height:1.15;">
+          Our Neighborhood Bakery Flagships
+        </h1>
+        <p style="font-size:1.1rem;color:var(--color-beige);max-width:620px;margin:0 auto;line-height:1.65;">
+          Step into the intoxicating aroma of simmering cane sugar and ground espresso. Join us at our Pearl District
+          kitchen counter or our heated Hawthorne garden patio.
+        </p>
+
+        <div class="locations-status-ticker">
+          <div class="status-ticker-badge">
+            <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px;">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                clip-rule="evenodd" />
+            </svg>
+            <span>Hot Batch 2 In Oven: 12:00 PM</span>
+          </div>
+          <span style="color:var(--color-beige);">•</span>
+          <span style="font-size:0.88rem;color:var(--color-cream);">Indoor Seating &amp; Curbside Lockers Active</span>
+          <span style="color:var(--color-beige);">•</span>
+          <span style="font-size:0.88rem;color:var(--color-accent);font-weight:700;">Pet Friendly Patios</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TWO FLAGSHIP BAKERIES (2 Architectural Cards) -->
+    <section class="locations-cards-section" id="flagship-bakeries">
+      <div class="site-container">
+        <div class="section-head">
+          <span class="section-eyebrow">Explore Our Spaces</span>
+          <h2 class="section-title">Two Distinct Atmospheres</h2>
+          <p class="section-subtitle">
+            Each location offers our complete daily menu alongside curated neighborhood espresso pairings.
+          </p>
+        </div>
+
+        <div class="locations-cards-grid">
+          <!-- Location 1 -->
+          <article class="location-card">
+            <div class="location-media">
+              <img src="assets/images/sections/p36.jpg"
+                alt="Velvet Dough Pearl District Atelier interior with marble counter and espresso bar" loading="lazy">
+              <span class="location-badge-pill">Flagship Atelier</span>
+            </div>
+            <div class="location-body">
+              <h3 class="location-title">The Pearl District Atelier</h3>
+              <div class="location-address">
+                <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px;">
+                  <path fill-rule="evenodd"
+                    d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.776 11.776 0 001.04.574l.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>1420 NW Lovejoy St, Portland, OR 97209</span>
+              </div>
+              <ul class="location-details-list">
+                <li class="location-detail-item">
+                  <span class="detail-label">Monday – Friday</span>
+                  <span class="detail-value detail-highlight">6:30 AM – 4:00 PM</span>
+                </li>
+                <li class="location-detail-item">
+                  <span class="detail-label">Saturday &amp; Sunday</span>
+                  <span class="detail-value detail-highlight">7:00 AM – 5:00 PM</span>
+                </li>
+                <li class="location-detail-item">
+                  <span class="detail-label">Phone Inquiries</span>
+                  <span class="detail-value">(503) 892-4411</span>
+                </li>
+                <li class="location-detail-item location-detail-atmosphere">
+                  <span class="detail-label">Atmosphere</span>
+                  <span class="detail-value">Open glass viewing kitchen &amp; walnut bar</span>
+                </li>
+              </ul>
+              <div class="location-actions-row">
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-primary"
+                  style="flex:1;padding:0.65rem 1rem;font-size:0.88rem;">
+                  Get Directions
+                </a>
+                <a href="menu.html" class="btn-secondary" style="flex:1;padding:0.65rem 1rem;font-size:0.88rem;">
+                  Pearl Menu
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Location 2 -->
+          <article class="location-card">
+            <div class="location-media">
+              <img src="assets/images/sections/p35.jpg"
+                alt="Velvet Dough Hawthorne garden courtyard with outdoor seating and brick facade" loading="lazy">
+              <span class="location-badge-pill">Garden Courtyard</span>
+            </div>
+            <div class="location-body">
+              <h3 class="location-title">The Hawthorne Garden Bakery</h3>
+              <div class="location-address">
+                <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px;">
+                  <path fill-rule="evenodd"
+                    d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.776 11.776 0 001.04.574l.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>3810 SE Hawthorne Blvd, Portland, OR 97214</span>
+              </div>
+              <ul class="location-details-list">
+                <li class="location-detail-item">
+                  <span class="detail-label">Monday – Friday</span>
+                  <span class="detail-value detail-highlight">7:00 AM – 3:30 PM</span>
+                </li>
+                <li class="location-detail-item">
+                  <span class="detail-label">Saturday &amp; Sunday</span>
+                  <span class="detail-value detail-highlight">7:30 AM – 4:30 PM</span>
+                </li>
+                <li class="location-detail-item">
+                  <span class="detail-label">Phone Inquiries</span>
+                  <span class="detail-value">(503) 719-8820</span>
+                </li>
+                <li class="location-detail-item location-detail-atmosphere">
+                  <span class="detail-label">Atmosphere</span>
+                  <span class="detail-value">Heated courtyard, vine canopy &amp; fire pit</span>
+                </li>
+              </ul>
+              <div class="location-actions-row">
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-primary"
+                  style="flex:1;padding:0.65rem 1rem;font-size:0.88rem;">
+                  Get Directions
+                </a>
+                <a href="menu.html" class="btn-secondary" style="flex:1;padding:0.65rem 1rem;font-size:0.88rem;">
+                  Hawthorne Menu
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: IN-STORE AMENITIES -->
+    <section class="locations-amenities-section" id="bakery-amenities">
+      <div class="site-container">
+        <div class="section-head">
+          <span class="section-eyebrow">Hospitality Standards</span>
+          <h2 class="section-title">Designed For Your Morning Ritual</h2>
+          <p class="section-subtitle">
+            Whether staying for a slow weekend read or grabbing hot donuts on your commute, we’ve anticipated your
+            visit.
+          </p>
+        </div>
+
+        <div class="locations-amenities-grid">
+          <!-- Amenity 1 -->
+          <div class="amenity-card">
+            <div class="amenity-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12h20M12 2v20" />
+              </svg>
+            </div>
+            <h3 class="amenity-title">Viewing Kitchen</h3>
+            <p class="amenity-desc">Watch our bakers roll 24-hour dough, hand-cut rings, and kettle glaze from the
+              dining counter.</p>
+          </div>
+
+          <!-- Amenity 2 -->
+          <div class="amenity-card">
+            <div class="amenity-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+              </svg>
+            </div>
+            <h3 class="amenity-title">La Marzocco Bar</h3>
+            <p class="amenity-desc">Custom PB-X machine pulling custom roasted Ethiopian and Colombian single-origin
+              beans.</p>
+          </div>
+
+          <!-- Amenity 3 -->
+          <div class="amenity-card">
+            <div class="amenity-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3 class="amenity-title">Express Heat </h3>
+            <p class="amenity-desc">Pre-order on your phone; your box waits heated in a secure keycoded locker for
+              zero-wait pickup.</p>
+          </div>
+
+          <!-- Amenity 4 -->
+          <div class="amenity-card">
+            <div class="amenity-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </div>
+            <h3 class="amenity-title">Heated Pet Patio</h3>
+            <p class="amenity-desc">Covered, heated outdoor tables with fresh water bowls and organic peanut butter dog
+              pup-donuts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: LIVE KITCHEN BATCH COMPARISON -->
+    <section class="locations-schedule-section" id="kitchen-schedule">
+      <div class="site-container">
+        <div class="locations-schedule-grid">
+          <div>
+            <span class="section-eyebrow">Peak Freshness Timing</span>
+            <h2 class="section-title">When To Catch The Warmest Batch</h2>
+            <p style="font-size:1.05rem;color:var(--text-muted);line-height:1.65;margin-bottom:1.75rem;">
+              Both bakeries sync their ovens to guarantee hot brioche throughout the morning rush and midday lunch hour.
+            </p>
+
+            <div class="batch-schedule-card">
+              <table class="batch-schedule-table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="col-batch">Batch Window</th>
+                    <th scope="col" class="col-loc">Pearl Atelier</th>
+                    <th scope="col" class="col-loc">Hawthorne </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="batch-title">Batch 1 <span class="batch-sub">(Dawn)</span></td>
+                    <td class="batch-time-cell"><span class="batch-time">6:30 AM</span> <span
+                        class="badge-fresh-tag">Hot</span></td>
+                    <td class="batch-time-cell"><span class="batch-time">7:00 AM</span> <span
+                        class="badge-fresh-tag">Hot</span></td>
+                  </tr>
+                  <tr>
+                    <td class="batch-title">Batch 2 <span class="batch-sub">(Noon)</span></td>
+                    <td class="batch-time-cell"><span class="batch-time">12:00 PM</span> <span
+                        class="badge-fresh-tag">Hot</span></td>
+                    <td class="batch-time-cell"><span class="batch-time">12:15 PM</span> <span
+                        class="badge-fresh-tag">Hot</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="batch-piping-footer">
+                <span class="piping-label">Curd &amp; Chantilly Piping:</span>
+                <span class="piping-val">Piped on-demand upon ordering</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-kitchen-media">
+            <img src="assets/images/sections/p37.jpg"
+              alt="Artisan baker through glass viewing window dipping warm brioche into chocolate glaze" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: VISIT US CTA (Strict Rule: Last Section is CTA) -->
+    <section class="locations-visit-cta-section" id="visit-cta">
+      <div class="site-container">
+        <div class="cta-inner-box">
+          <span class="cta-eyebrow">Morning Gatherings</span>
+          <h2 class="cta-title">Planning a Morning Visit or Weekend Breakfast?</h2>
+          <p class="cta-desc">
+            Reserve a box in advance to guarantee your favorite seasonal glazes aren’t sold out before you arrive.
+          </p>
+          <div class="cta-button-group">
+            <a href="menu.html" class="btn-primary">
+              <span>Pre-Order for Today</span>
+              <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px;">
+                <path fill-rule="evenodd"
+                  d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="contact.html" class="btn-dark-secondary">Contact Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER -->
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div>
+          <a href="index.html" class="footer-brand" aria-label="Velvet Dough Home">
+            <div class="footer-brand-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round"
+                  stroke-dasharray="2.5 1.5" />
+                <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2" />
+                <path
+                  d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z"
+                  fill="#FFFDF8" />
+                <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8" />
+                <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z"
+                  fill="#E58A22" />
+                <circle cx="16" cy="18" r="1.1" fill="#FFFDF8" />
+                <circle cx="31" cy="17" r="1.1" fill="#FFFDF8" />
+              </svg>
+            </div>
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">VELVET DOUGH</span>
+              <span class="footer-brand-sub">Artisan Bakery</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Artisanal brioche donuts and slow-fermented bakery goods, handcrafted every morning from scratch using
+            organic pasture butter and seasonal infusions.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="footer-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="footer-nav-link">Home 1 (Main)</a></li>
+            <li><a href="home-2.html" class="footer-nav-link">Home 2 (Editorial)</a></li>
+            <li><a href="menu.html" class="footer-nav-link">Daily Flavors</a></li>
+            <li><a href="custom-orders.html" class="footer-nav-link">Custom Events</a></li>
+            <li><a href="locations.html" class="footer-nav-link">Locations &amp; Hours</a></li>
+            <li><a href="about.html" class="footer-nav-link">About Bakery</a></li>
+            <li><a href="contact.html" class="footer-nav-link">Contact &amp; Catering</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hours -->
+        <div>
+          <h4 class="footer-col-title">Baking Hours</h4>
+          <div class="footer-hours-item">
+            <span>Mon – Fri</span>
+            <span>6:30 AM – 4:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Saturday</span>
+            <span>7:00 AM – 5:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Sunday</span>
+            <span>7:30 AM – 3:00 PM</span>
+          </div>
+          <div class="footer-hours-item" style="margin-top:0.75rem;">
+            <span>Hot Batch Times:</span>
+            <span>7 AM & 12 PM</span>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div>
+          <h4 class="footer-col-title">Flavor Drops</h4>
+          <p style="font-size:0.88rem;color:var(--color-beige);margin-bottom:1rem;">
+            Get early alerts for limited weekend doughnut batches and secret menu drops.
+          </p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed to Velvet Dough alerts!');"
+            style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <input type="email" placeholder="Your email" required
+              style="flex:1;min-width:160px;padding:0.6rem 0.85rem;background:rgba(248,242,232,0.1);border:1px solid rgba(234,216,204,0.25);border-radius:var(--radius-full);color:#FFFDF8;font-size:0.88rem;outline:none;">
+            <button type="submit" class="btn-primary" style="padding:0.6rem 1.1rem;font-size:0.85rem;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 Velvet Dough Bakery &amp; Artisan Doughnuts. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-nav-link">Privacy Policy</a>
+          <a href="#" class="footer-nav-link">Terms of Service</a>
+          <a href="#" class="footer-nav-link">Allergen Information</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="btn-scroll-top" aria-label="Scroll to top" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <!-- Core JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

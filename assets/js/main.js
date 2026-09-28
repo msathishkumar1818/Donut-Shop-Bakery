@@ -1,0 +1,377 @@
+/**
+ * DONUT SHOP & BAKERY - GLOBAL JAVASCRIPT (MAIN.JS)
+ * Features:
+ * - Branded Loader auto-dismiss
+ * - Click-only Home Dropdown (Hover NEVER triggers)
+ * - Mobile Offcanvas Drawer & Mobile Accordion
+ * - Dark Mode persistence (#000000 root)
+ * - RTL/LTR direction toggle with localStorage
+ * - Scroll to top
+ * - Auth Modal (Login/Register tab switching)
+ * - Active navigation detection
+ */
+
+(function () {
+  'use strict';
+
+  // 1. BRANDED LOADER
+  function initLoader() {
+    const loader = document.getElementById('global-loader');
+    if (!loader) return;
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        loader.classList.add('loaded');
+      }, 350);
+    });
+    // Fallback safeguard in case window.load takes long
+    setTimeout(() => {
+      if (loader && !loader.classList.contains('loaded')) {
+        loader.classList.add('loaded');
+      }
+    }, 2000);
+  }
+
+  // 2. DARK MODE SYSTEM (#000000 background)
+  function initDarkMode() {
+    const savedTheme = localStorage.getItem('donut_theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcons(savedTheme);
+
+    const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+    toggleBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('donut_theme', nextTheme);
+        updateThemeIcons(nextTheme);
+      });
+    });
+  }
+
+  function updateThemeIcons(theme) {
+    const sunIcons = document.querySelectorAll('.icon-sun');
+    const moonIcons = document.querySelectorAll('.icon-moon');
+    if (theme === 'dark') {
+      sunIcons.forEach((icon) => (icon.style.display = 'block'));
+      moonIcons.forEach((icon) => (icon.style.display = 'none'));
+    } else {
+      sunIcons.forEach((icon) => (icon.style.display = 'none'));
+      moonIcons.forEach((icon) => (icon.style.display = 'block'));
+    }
+  }
+
+  // 3. RTL / LTR DIRECTION TOGGLE
+  function initRTL() {
+    const savedDir = localStorage.getItem('donut_direction') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+
+    const rtlBtns = document.querySelectorAll('.rtl-toggle-btn');
+    const updateRtlLabels = (dir) => {
+      rtlBtns.forEach((btn) => {
+        const textSpan = btn.querySelector('.rtl-toggle-text');
+        if (textSpan) {
+          textSpan.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+        }
+      });
+    };
+
+    updateRtlLabels(savedDir);
+
+    rtlBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+        const nextDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+        document.documentElement.setAttribute('dir', nextDir);
+        localStorage.setItem('donut_direction', nextDir);
+        updateRtlLabels(nextDir);
+      });
+    });
+  }
+
+  // 4. CLICK-ONLY DESKTOP HOME DROPDOWN (Strict: Hover NEVER opens it)
+  function initDesktopDropdown() {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    if (!dropdownToggle || !dropdownMenu) return;
+
+    dropdownToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdownMenu.classList.contains('open');
+      if (isOpen) {
+        dropdownMenu.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      } else {
+        dropdownMenu.classList.add('open');
+        dropdownToggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dropdownMenu.classList.contains('open')) {
+        dropdownMenu.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // 5. MOBILE DRAWER & ACCORDION
+  function initMobileMenu() {
+    const openBtn = document.querySelector('.btn-menu-toggle');
+    const closeBtn = document.querySelector('.mobile-close-btn');
+    const drawer = document.querySelector('.mobile-nav-drawer');
+    const accordionToggle = document.querySelector('.mobile-accordion-toggle');
+    const accordionContent = document.querySelector('.mobile-accordion-content');
+    const navLinks = document.querySelectorAll('.mobile-nav-link, .mobile-sublink');
+
+    if (!drawer) return;
+
+    // Always start accordion CLOSED (regardless of page or URL)
+    function resetAccordion() {
+      if (accordionContent && accordionToggle) {
+        accordionContent.classList.remove('open');
+        accordionToggle.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    function openDrawer() {
+      resetAccordion(); // Always reset Home dropdown when drawer opens
+      drawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+      resetAccordion(); // Reset when drawer closes too
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
+    // Close drawer on backdrop click
+    drawer.addEventListener('click', (e) => {
+      if (e.target === drawer) closeDrawer();
+    });
+
+    // Close drawer + reset accordion when any nav link is clicked
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => closeDrawer());
+    });
+
+    // Accordion toggle: ONLY user click opens/closes it — no auto-open
+    if (accordionToggle && accordionContent) {
+      accordionToggle.addEventListener('click', () => {
+        const isOpen = accordionContent.classList.contains('open');
+        if (isOpen) {
+          resetAccordion(); // Close
+        } else {
+          accordionContent.classList.add('open'); // Open
+          accordionToggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+
+    // Initialize: force accordion CLOSED on page load
+    resetAccordion();
+  }
+
+  // 6. SCROLL TO TOP BUTTON
+  function initScrollToTop() {
+    const scrollBtn = document.querySelector('.btn-scroll-top');
+    if (!scrollBtn) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollBtn.classList.add('visible');
+      } else {
+        scrollBtn.classList.remove('visible');
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+  }
+
+  // 7. AUTH MODAL (LOGIN & REGISTER)
+  function initAuthModal() {
+    const overlay = document.querySelector('.auth-modal-overlay');
+    const closeBtn = document.querySelector('.auth-modal-close');
+    const openBtns = document.querySelectorAll('.btn-login, [data-auth-modal]');
+    const tabBtns = document.querySelectorAll('.auth-tab-btn');
+    const loginForm = document.getElementById('modal-login-form');
+    const registerForm = document.getElementById('modal-register-form');
+
+    if (!overlay) return;
+
+    function openModal() {
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    openBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        // If it's not linking directly to an external page, open modal
+        if (!btn.getAttribute('href') || btn.getAttribute('href') === '#') {
+          e.preventDefault();
+          openModal();
+        }
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) {
+        closeModal();
+      }
+    });
+
+    // Tab switching
+    tabBtns.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const targetTab = tab.getAttribute('data-tab');
+        tabBtns.forEach((b) => b.classList.remove('active'));
+        tab.classList.add('active');
+
+        if (targetTab === 'register') {
+          if (loginForm) loginForm.style.display = 'none';
+          if (registerForm) registerForm.style.display = 'block';
+        } else {
+          if (loginForm) loginForm.style.display = 'block';
+          if (registerForm) registerForm.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // 8. ACTIVE NAVIGATION DETECTION
+  function initActiveNav() {
+    let currentPath = window.location.pathname.split('/').pop().toLowerCase().split('?')[0].split('#')[0];
+    if (!currentPath || currentPath === '') {
+      currentPath = 'index.html';
+    }
+
+    const isHomePage = (currentPath === 'index.html' || currentPath === 'home-2.html');
+
+    // 1. Desktop Home dropdown toggle
+    const desktopHomeToggle = document.querySelector('.dropdown-toggle');
+    if (desktopHomeToggle) {
+      if (isHomePage) {
+        desktopHomeToggle.classList.add('active');
+      } else {
+        desktopHomeToggle.classList.remove('active');
+      }
+    }
+
+    // 2. Mobile accordion toggle
+    const accordionToggle = document.querySelector('.mobile-accordion-toggle');
+    if (accordionToggle) {
+      if (isHomePage) {
+        accordionToggle.classList.add('active');
+      } else {
+        accordionToggle.classList.remove('active');
+      }
+    }
+
+    // 3. Mark active links across navigation
+    const allLinks = document.querySelectorAll('.nav-link, .dropdown-link, .mobile-nav-link, .mobile-sublink');
+    allLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href) {
+        const linkPath = href.split('/').pop().toLowerCase().split('?')[0].split('#')[0];
+        if (linkPath === currentPath) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      }
+    });
+  }
+
+  // 9. UNIVERSAL SCROLL & ENTRANCE ANIMATIONS (All Pages)
+  function initScrollAnimations() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal-on-scroll, .reveal-scale-in, .reveal-fade-in').forEach((el) => {
+        el.classList.add('is-visible');
+      });
+      return;
+    }
+
+    const animTargets = document.querySelectorAll(
+      '.reveal-on-scroll, .reveal-scale-in, .reveal-fade-in, ' +
+      '.section-header, .section-head, .flavor-card, .pillar-card, .curation-card, ' +
+      '.team-card, .amenity-card, .contact-desk-card, .contact-faq-card, ' +
+      '.showcase-image-card, .kitchen-mosaic-item, .craft-step-item, ' +
+      '.cta-inner-box, .concierge-status-card, .contact-live-map-card, ' +
+      '.location-card, .chapter-card, .style-card, .timeline-step, .mosaic-photo'
+    );
+
+    animTargets.forEach((el) => {
+      if (!el.classList.contains('reveal-on-scroll') && 
+          !el.classList.contains('reveal-scale-in') && 
+          !el.classList.contains('reveal-fade-in')) {
+        el.classList.add('reveal-on-scroll');
+        const siblingIndex = Array.from(el.parentNode.children).indexOf(el);
+        if (siblingIndex > 0 && siblingIndex <= 5) {
+          el.style.transitionDelay = `${siblingIndex * 0.12}s`;
+        }
+      }
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      animTargets.forEach((el) => observer.observe(el));
+    } else {
+      // Fallback for older browsers
+      animTargets.forEach((el) => el.classList.add('is-visible'));
+    }
+  }
+
+  // Initialize all features once DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    initLoader();
+    initDarkMode();
+    initRTL();
+    initDesktopDropdown();
+    initMobileMenu();
+    initScrollToTop();
+    initAuthModal();
+    initActiveNav();
+    initScrollAnimations();
+  });
+})();

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvet Dough | Artisan Donut Shop & Handcrafted Bakery</title>
+  <meta name="description"
+    content="Velvet Dough is an artisan donut shop crafting slow-fermented brioche donuts, small-batch seasonal glazes, and morning pastries fresh daily.">
+
+  <!-- Core Design System CSS -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- BRANDED GLOBAL LOADER -->
+  <div id="global-loader" aria-label="Loading Velvet Dough">
+    <div class="loader-donut-spinner"></div>
+    <div class="loader-text">Velvet Dough</div>
+  </div>
+
+  <!-- FIXED SLIM HEADER (Compact Height, Single-Line Alignment) -->
+  <header class="site-header" id="main-header">
+    <div class="site-container header-inner">
+
+      <!-- Brand Logo + Identity -->
+      <a href="index.html" class="header-brand" aria-label="Velvet Dough Home">
+        <div class="header-brand-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="2.5 1.5"/>
+            <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2"/>
+            <path d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z" fill="#FFFDF8"/>
+            <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8"/>
+            <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z" fill="#E58A22"/>
+            <circle cx="16" cy="18" r="1.1" fill="#FFFDF8"/>
+            <circle cx="31" cy="17" r="1.1" fill="#FFFDF8"/>
+          </svg>
+        </div>
+        <div class="header-brand-text">
+          <span class="header-brand-title">VELVET DOUGH</span>
+          <span class="header-brand-sub">Artisan Bakery</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation: EXACTLY 6 PRIMARY ITEMS -->
+      <nav class="header-nav" aria-label="Primary Navigation">
+        <!-- 1. Home (Click-only Dropdown) -->
+        <div class="nav-item-dropdown">
+          <button class="dropdown-toggle active" id="homeDropdownBtn" aria-haspopup="true" aria-expanded="false"
+            type="button">
+            <span>Home</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="dropdown-menu" id="homeDropdownMenu" aria-labelledby="homeDropdownBtn">
+            <a href="index.html" class="dropdown-link active">Home 1 (Main)</a>
+            <a href="home-2.html" class="dropdown-link">Home 2 (Editorial)</a>
+          </div>
+        </div>
+
+        <!-- 2. Menu -->
+        <a href="menu.html" class="nav-link">Menu</a>
+
+        <!-- 3. Custom Orders -->
+        <a href="custom-orders.html" class="nav-link">Custom Orders</a>
+
+        <!-- 4. Locations -->
+        <a href="locations.html" class="nav-link">Locations</a>
+
+        <!-- 5. About (Mandatory) -->
+        <a href="about.html" class="nav-link">About</a>
+
+        <!-- 6. Contact -->
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop Header Controls: RTL, Dark Mode, Member Login -->
+      <div class="header-actions">
+        <div class="header-controls-pill">
+          <button class="btn-control-icon rtl-toggle-btn" aria-label="Toggle Text Direction (RTL / LTR)"
+            title="Toggle Direction (RTL / LTR)">
+            <span class="rtl-toggle-text">RTL</span>
+          </button>
+
+          <button class="btn-control-icon theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Login Button Linking to Dedicated Login Page -->
+        <a href="login.html" class="btn-login" aria-label="Member Sign In">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="btn-menu-toggle" aria-label="Open Navigation Menu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE OFFCANVAS DRAWER -->
+  <aside class="mobile-nav-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="header-brand">
+          <div class="header-brand-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="2.5 1.5"/>
+              <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2"/>
+              <path d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z" fill="#FFFDF8"/>
+              <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8"/>
+              <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z" fill="#E58A22"/>
+            </svg>
+          </div>
+          <div class="header-brand-text">
+            <span class="header-brand-title">VELVET DOUGH</span>
+            <span class="header-brand-sub">Artisan Bakery</span>
+          </div>
+        </a>
+        <button class="mobile-close-btn" aria-label="Close Navigation Menu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width:20px;height:20px;">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-body">
+        <div class="mobile-accordion-wrapper">
+          <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+            <span>Home</span>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="index.html" class="mobile-sublink active">Home 1 (Main)</a>
+            <a href="home-2.html" class="mobile-sublink">Home 2 (Editorial)</a>
+          </div>
+        </div>
+
+        <a href="menu.html" class="mobile-nav-link">Menu</a>
+        <a href="custom-orders.html" class="mobile-nav-link">Custom Orders</a>
+        <a href="locations.html" class="mobile-nav-link">Locations</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <a href="login.html" class="mobile-drawer-login">Sign In / Login</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- AUTH MODAL (LOGIN & REGISTER) -->
+  <div class="auth-modal-overlay" id="authModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="auth-modal-card">
+      <button class="auth-modal-close" aria-label="Close Dialog" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" style="width:18px;height:18px;">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div class="auth-modal-header">
+        <h3 style="font-size:1.4rem;">Welcome to Velvet Dough</h3>
+        <p style="font-size:0.88rem;margin-top:0.35rem;">Fresh donuts, artisan sourdough, and exclusive member drops.
+        </p>
+        <div class="auth-modal-tabs">
+          <button class="auth-tab-btn active" data-tab="login" type="button">Sign In</button>
+          <button class="auth-tab-btn" data-tab="register" type="button">Create Account</button>
+        </div>
+      </div>
+      <div class="auth-modal-body">
+        <form id="modal-login-form"
+          onsubmit="event.preventDefault(); alert('Login successful!'); document.querySelector('.auth-modal-overlay').classList.remove('open');">
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="login-email">Email Address</label>
+            <input class="auth-form-input" type="email" id="login-email" placeholder="baker@velvetdough.com" required>
+          </div>
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="login-password">Password</label>
+            <input class="auth-form-input" type="password" id="login-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="auth-submit-btn">Sign In to Velvet Dough</button>
+        </form>
+
+        <form id="modal-register-form" style="display:none;"
+          onsubmit="event.preventDefault(); alert('Account registered!'); document.querySelector('.auth-modal-overlay').classList.remove('open');">
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="reg-name">Full Name</label>
+            <input class="auth-form-input" type="text" id="reg-name" placeholder="Eleanor Vance" required>
+          </div>
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="reg-email">Email Address</label>
+            <input class="auth-form-input" type="email" id="reg-email" placeholder="baker@velvetdough.com" required>
+          </div>
+          <div class="auth-form-group">
+            <label class="auth-form-label" for="reg-password">Create Password</label>
+            <input class="auth-form-input" type="password" id="reg-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="auth-submit-btn">Register for Member Club</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN CONTENT: EXACTLY 6 MAIN CONTENT SECTIONS (HOME 1)
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- SECTION 1: HERO SHOWCASE (Artisanal Warm Split) -->
+    <section class="hero-section" id="hero">
+      <div class="site-container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span>Hot Batch Baking Now • Fresh at 7:00 AM & 12:00 PM</span>
+            </div>
+            <h1 class="hero-title">
+              Slow-Fermented <em>Brioche Doughnuts</em> Handcrafted Every Morning.
+            </h1>
+            <p class="hero-lead">
+              Made with 24-hour chilled French brioche dough, churned pasture butter, and botanical glazes brewed in
+              small morning kettles.
+            </p>
+            <div class="hero-actions">
+              <a href="menu.html" class="btn-primary">
+                <span>Explore Today's Flavors</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px;">
+                  <path fill-rule="evenodd"
+                    d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="custom-orders.html" class="btn-dark-secondary">Custom Event Catering</a>
+            </div>
+            <div class="hero-metrics">
+              <div class="hero-metric-item">
+                <h4>24h</h4>
+                <p>Cold Ferment</p>
+              </div>
+              <div class="hero-metric-item">
+                <h4>100%</h4>
+                <p>Organic Flour</p>
+              </div>
+              <div class="hero-metric-item">
+                <h4>0%</h4>
+                <p>Artificial Additives</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper">
+            <div class="hero-image-frame">
+              <img src="assets/images/hero/p1.jpg" alt="Fresh artisan glazed donuts resting on bakery cooling rack"
+                width="600" height="480" loading="eager">
+            </div>
+            <div class="hero-floating-card">
+              <div class="hero-floating-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              </div>
+              <div>
+                <div class="hero-floating-title">Signature Brioche</div>
+                <div class="hero-floating-sub">Awarded Best Bakery 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: DAILY FRESH FLAVORS (4 Even Product Cards) -->
+    <section class="flavors-section" id="daily-flavors">
+      <div class="site-container">
+        <div class="section-head">
+          <span class="section-eyebrow">Fresh From The Morning Kettle</span>
+          <h2 class="section-title">Today's Daily Donut Flavors</h2>
+          <p class="section-subtitle">
+            Every batch is hand-cut, golden fried in clean organic oil, and dressed with botanical sugars and
+            single-origin chocolates.
+          </p>
+        </div>
+
+        <div class="flavors-grid">
+          <!-- Card 1 -->
+          <article class="flavor-card">
+            <div class="flavor-card-image-wrap">
+              <img src="assets/images/products/p2.jpg" alt="Belgian Dark Chocolate Ganache Donut" loading="lazy">
+              <span class="flavor-card-badge">Daily Classic</span>
+            </div>
+            <div class="flavor-card-content">
+              <div class="flavor-card-header">
+                <h3 class="flavor-title">Belgian Ganache</h3>
+                <span class="flavor-price">$4.75</span>
+              </div>
+              <p class="flavor-desc">
+                70% single-origin dark cocoa glaze topped with toasted Venezuelan cacao nibs and flaky sea salt.
+              </p>
+              <div class="flavor-card-footer">
+                <span class="flavor-tag">Dark Chocolate</span>
+                <a href="menu.html" class="btn-card-order" aria-label="View Belgian Ganache Details">
+                  <span>Order</span>
+                  <svg viewBox="0 0 20 20" fill="currentColor" style="width:14px;height:14px;">
+                    <path fill-rule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="flavor-card">
+            <div class="flavor-card-image-wrap">
+              <img src="assets/images/products/p3.jpg" alt="Golden Honey Pistachio Brioche Donut" loading="lazy">
+              <span class="flavor-card-badge">Chef Choice</span>
+            </div>
+            <div class="flavor-card-content">
+              <div class="flavor-card-header">
+                <h3 class="flavor-title">Honey Pistachio</h3>
+                <span class="flavor-price">$5.25</span>
+              </div>
+              <p class="flavor-desc">
+                Wildflower blossom honey reduction infused with crushed Sicilian bronte pistachios and cardamom.
+              </p>
+              <div class="flavor-card-footer">
+                <span class="flavor-tag">Botanical Nut</span>
+                <a href="menu.html" class="btn-card-order" aria-label="View Honey Pistachio Details">
+                  <span>Order</span>
+                  <svg viewBox="0 0 20 20" fill="currentColor" style="width:14px;height:14px;">
+                    <path fill-rule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="flavor-card">
+            <div class="flavor-card-image-wrap">
+              <img src="assets/images/products/p4.jpg" alt="Madagascar Bourbon Vanilla Bean Glaze Donut" loading="lazy">
+              <span class="flavor-card-badge">Heritage</span>
+            </div>
+            <div class="flavor-card-content">
+              <div class="flavor-card-header">
+                <h3 class="flavor-title">Bourbon Vanilla</h3>
+                <span class="flavor-price">$4.25</span>
+              </div>
+              <p class="flavor-desc">
+                Whole cured Madagascar vanilla pod caviar suspended in a paper-thin, crackling cane glaze.
+              </p>
+              <div class="flavor-card-footer">
+                <span class="flavor-tag">Old Fashioned</span>
+                <a href="menu.html" class="btn-card-order" aria-label="View Bourbon Vanilla Details">
+                  <span>Order</span>
+                  <svg viewBox="0 0 20 20" fill="currentColor" style="width:14px;height:14px;">
+                    <path fill-rule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="flavor-card">
+            <div class="flavor-card-image-wrap">
+              <img src="assets/images/products/p5.jpg" alt="Wild Raspberry Rosewater Filled Brioche Donut"
+                loading="lazy">
+              <span class="flavor-card-badge">Seasonal</span>
+            </div>
+            <div class="flavor-card-content">
+              <div class="flavor-card-header">
+                <h3 class="flavor-title">Raspberry Blush</h3>
+                <span class="flavor-price">$5.00</span>
+              </div>
+              <p class="flavor-desc">
+                Plump summer raspberries stewed with organic Damascus rosewater and whipped vanilla pastry cream.
+              </p>
+              <div class="flavor-card-footer">
+                <span class="flavor-tag">Fruit Filled</span>
+                <a href="menu.html" class="btn-card-order" aria-label="View Raspberry Blush Details">
+                  <span>Order</span>
+                  <svg viewBox="0 0 20 20" fill="currentColor" style="width:14px;height:14px;">
+                    <path fill-rule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: 24H BRIOCHE CRAFT (Unique Process Workflow) -->
+    <section class="craft-section" id="craft-process">
+      <div class="site-container">
+        <div class="craft-grid">
+          <div class="craft-media">
+            <div class="craft-image-main">
+              <img src="assets/images/sections/p6.jpg" alt="Artisan baker folding fermenting brioche dough"
+                loading="lazy">
+            </div>
+          </div>
+
+          <div>
+            <span class="section-eyebrow">Our Philosophy</span>
+            <h2 class="section-title">The 24-Hour Brioche Difference</h2>
+            <p style="font-size:1.05rem;color:var(--text-muted);margin-bottom:2rem;line-height:1.65;">
+              Unlike commercial cake donuts mixed in minutes, our dough is treated with the gentle patience of an
+              old-world European boulangerie.
+            </p>
+
+            <div class="craft-steps-list">
+              <div class="craft-step-item">
+                <div class="craft-step-number">1</div>
+                <div class="craft-step-content">
+                  <h3>Cold Overnight Fermentation</h3>
+                  <p>
+                    Dough rests for 24 hours at 4°C, developing complex lactic notes and a featherlight airy crumb.
+                  </p>
+                </div>
+              </div>
+
+              <div class="craft-step-item">
+                <div class="craft-step-number">2</div>
+                <div class="craft-step-content">
+                  <h3>Hand Rolling & Precision Proofing</h3>
+                  <p>
+                    Every ring and pillow is cut by hand with custom brass dies, then slow-proofed in steam chambers.
+                  </p>
+                </div>
+              </div>
+
+              <div class="craft-step-item">
+                <div class="craft-step-number">3</div>
+                <div class="craft-step-content">
+                  <h3>Flash Glazing at 180°F</h3>
+                  <p>
+                    Dipped warm into freshly simmered natural glazes to lock in supreme moisture without grease.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: CHEF'S SIGNATURE HIGHLIGHT (Asymmetric Tasting Trio) -->
+    <section class="signature-section" id="tasting-trio">
+      <div class="site-container">
+        <div class="signature-card-banner">
+          <div>
+            <span class="signature-tag">Limited Edition Box</span>
+            <h2 class="signature-title">The Baker's Morning Tasting Trio</h2>
+            <p class="signature-desc">
+              Curated daily by Head Baker Elena Rostova. Includes our dark ganache ring, golden pistachio pillow, and
+              seasonal berry brioche paired with a 4oz espresso shot.
+            </p>
+            <div class="signature-flavor-tags">
+              <span class="signature-flavor-pill">1x Belgian Dark Cocoa</span>
+              <span class="signature-flavor-pill">1x Wildflower Pistachio</span>
+              <span class="signature-flavor-pill">1x Raspberry Rosewater</span>
+            </div>
+            <a href="menu.html" class="btn-primary">Reserve Tasting Box ($14.50)</a>
+          </div>
+
+          <div class="signature-media">
+            <img src="assets/images/sections/p7.jpg"
+              alt="Fresh artisan donuts glazed and garnished with pistachio and sugar" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: MORNING COUNTER & BATCH RITUAL -->
+    <section class="counter-section" id="morning-counter">
+      <div class="site-container">
+        <div class="counter-grid">
+          <div class="counter-info-box">
+            <span class="section-eyebrow">Daily Schedule</span>
+            <h2 class="section-title">Fresh Batches Twice Each Day</h2>
+            <p style="font-size:1.05rem;color:var(--text-muted);line-height:1.65;margin-bottom:1.5rem;">
+              We bake small batches exclusively to ensure you never eat a donut that sat for hours under heat lamps.
+              When the red bakery lantern is lit, hot donuts are emerging.
+            </p>
+            <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+              <div>
+                <strong style="display:block;font-size:1.1rem;color:var(--text-main);">Organic Flour</strong>
+                <span style="font-size:0.88rem;color:var(--text-muted);">Stoneground locally</span>
+              </div>
+              <div>
+                <strong style="display:block;font-size:1.1rem;color:var(--text-main);">Cultured Butter</strong>
+                <span style="font-size:0.88rem;color:var(--text-muted);">84% butterfat Normandy</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="counter-schedule-card">
+            <div class="schedule-header">
+              <h4>Live Oven Schedule</h4>
+              <span class="live-status-badge">Hot In Oven</span>
+            </div>
+
+            <div class="schedule-row">
+              <div>
+                <div class="schedule-time">6:30 AM</div>
+                <div class="schedule-batch-name">Classic Glaze & Cinnamon Sugar</div>
+              </div>
+              <span class="schedule-availability">Ready at Open</span>
+            </div>
+
+            <div class="schedule-row">
+              <div>
+                <div class="schedule-time">7:00 AM</div>
+                <div class="schedule-batch-name">Filled Brioche & Curds</div>
+              </div>
+              <span class="schedule-availability">Limited 80 pcs</span>
+            </div>
+
+            <div class="schedule-row">
+              <div>
+                <div class="schedule-time">12:00 PM</div>
+                <div class="schedule-batch-name">Lunch Hot Batch (Dark Ganache)</div>
+              </div>
+              <span class="schedule-availability">Warm & Molten</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: PRE-ORDER CTA BANNER (Strict Rule: Last Section is CTA) -->
+    <section class="preorder-cta-section" id="preorder-cta">
+      <div class="site-container">
+        <div class="cta-inner-box">
+          <span class="cta-eyebrow">Catering & Special Celebrations</span>
+          <h2 class="cta-title">Planning an Event or Morning Gathering?</h2>
+          <p class="cta-desc">
+            Reserve custom donut walls, mini brioche towers, and curated assorted boxes 24 hours in advance for
+            guaranteed morning delivery.
+          </p>
+          <div class="cta-button-group">
+            <a href="custom-orders.html" class="btn-primary">
+              <span>Build Custom Order</span>
+              <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px;">
+                <path fill-rule="evenodd"
+                  d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="contact.html" class="btn-dark-secondary">Contact Catering Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER -->
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div>
+          <a href="index.html" class="footer-brand" aria-label="Velvet Dough Home">
+            <div class="footer-brand-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="18" stroke="#E58A22" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="2.5 1.5"/>
+                <circle cx="24" cy="24" r="14.5" fill="#3E241A" stroke="#E58A22" stroke-width="1.2"/>
+                <path d="M12 22C12 16 16.5 11 24 11C31.5 11 36 16 36 22C34.5 24 33 21 31 23C29 25 27.5 22 25.5 24C23.5 26 21.5 22.5 19.5 24C17.5 25.5 15.5 22 14 23.5C12.8 24.5 12 23 12 22Z" fill="#FFFDF8"/>
+                <circle cx="24" cy="24" r="5.8" fill="#140D09" stroke="#E58A22" stroke-width="1.8"/>
+                <path d="M24 2.5L25.8 6.5L30 7.2L26.8 10L27.6 14.2L24 12L20.4 14.2L21.2 10L18 7.2L22.2 6.5L24 2.5Z" fill="#E58A22"/>
+                <circle cx="16" cy="18" r="1.1" fill="#FFFDF8"/>
+                <circle cx="31" cy="17" r="1.1" fill="#FFFDF8"/>
+              </svg>
+            </div>
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">VELVET DOUGH</span>
+              <span class="footer-brand-sub">Artisan Bakery</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Artisanal brioche donuts and slow-fermented bakery goods, handcrafted every morning from scratch using
+            organic pasture butter and seasonal infusions.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="footer-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="footer-nav-link">Home 1 (Main)</a></li>
+            <li><a href="home-2.html" class="footer-nav-link">Home 2 (Editorial)</a></li>
+            <li><a href="menu.html" class="footer-nav-link">Daily Flavors</a></li>
+            <li><a href="custom-orders.html" class="footer-nav-link">Custom Events</a></li>
+            <li><a href="about.html" class="footer-nav-link">About Bakery</a></li>
+            <li><a href="contact.html" class="footer-nav-link">Contact & Catering</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hours -->
+        <div>
+          <h4 class="footer-col-title">Baking Hours</h4>
+          <div class="footer-hours-item">
+            <span>Mon – Fri</span>
+            <span>6:30 AM – 4:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Saturday</span>
+            <span>7:00 AM – 5:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Sunday</span>
+            <span>7:30 AM – 3:00 PM</span>
+          </div>
+          <div class="footer-hours-item" style="margin-top:0.75rem;">
+            <span>Hot Batch Times:</span>
+            <span>7 AM & 12 PM</span>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div>
+          <h4 class="footer-col-title">Flavor Drops</h4>
+          <p style="font-size:0.88rem;color:var(--color-beige);margin-bottom:1rem;">
+            Get early alerts for limited weekend doughnut batches and secret menu drops.
+          </p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed to Velvet Dough alerts!');"
+            style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <input type="email" placeholder="Your email" required
+              style="flex:1;min-width:160px;padding:0.6rem 0.85rem;background:rgba(248,242,232,0.1);border:1px solid rgba(234,216,204,0.25);border-radius:var(--radius-full);color:#FFFDF8;font-size:0.88rem;outline:none;">
+            <button type="submit" class="btn-primary" style="padding:0.6rem 1.1rem;font-size:0.85rem;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 Velvet Dough Bakery &amp; Artisan Doughnuts. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-nav-link">Privacy Policy</a>
+          <a href="#" class="footer-nav-link">Terms of Service</a>
+          <a href="#" class="footer-nav-link">Allergen Information</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="btn-scroll-top" aria-label="Scroll to top" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <!-- Core JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
