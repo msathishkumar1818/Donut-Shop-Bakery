@@ -815,22 +815,21 @@
     height: 16px;
   }
 
-  /* Footer legal links in ONE single horizontal line on phones */
+  /* Footer legal links on phones: clean wrapped alignment without horizontal overflow */
   .footer-legal-links {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: clamp(0.45rem, 2.2vw, 0.85rem) !important;
+    flex-wrap: wrap !important;
+    gap: 0.45rem 0.85rem !important;
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
-    white-space: nowrap !important;
   }
 
   .footer-legal-links a {
     white-space: nowrap !important;
     text-align: center;
-    font-size: clamp(0.68rem, 2.3vw, 0.78rem) !important;
+    font-size: clamp(0.72rem, 2.4vw, 0.8rem) !important;
     color: rgba(248, 242, 232, 0.75);
     transition: color var(--transition-fast);
   }
@@ -1331,6 +1330,12 @@
 }
 
 @media (max-width: 768px) {
+  .locations-hero-title,
+  .locations-hero-section h1 {
+    font-size: 2.25rem !important;
+    line-height: 1.18 !important;
+  }
+
   .locations-amenities-grid {
     grid-template-columns: 1fr;
   }
@@ -1350,9 +1355,10 @@
     justify-content: center;
     gap: 0.55rem;
     border-radius: var(--radius-md);
-    padding: 1.15rem 1.4rem;
-    max-width: 360px;
+    padding: 1.15rem 1.25rem;
+    max-width: 100%;
     width: 100%;
+    box-sizing: border-box;
     margin: 1.75rem auto 0 auto;
     text-align: center;
   }
@@ -1531,8 +1537,15 @@
 @media (max-width: 480px) {
   .about-hero-section h1,
   .contact-hero-section h1,
-  .contact-hero-title {
+  .contact-hero-title,
+  .locations-hero-title,
+  .locations-hero-section h1,
+  .menu-hero-title,
+  .menu-hero-section h1 {
     font-size: 1.85rem !important;
+    line-height: 1.2 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
 
   .contact-hero-media img {
@@ -1611,6 +1624,304 @@
     padding: 0.22rem 0.6rem;
     white-space: nowrap;
     flex-shrink: 0;
+  }
+}
+
+/* ==========================================================================
+   SAMSUNG GALAXY A55 & COMPACT MOBILE VIEWPORTS (<= 380px / 360px / 320px)
+   Eliminates all horizontal overflow and guarantees flawless layout & typography
+   ========================================================================== */
+@media (max-width: 380px) {
+  html, body {
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  .site-container {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Locations Page - Hero Section & Status Ticker */
+  .locations-hero-section {
+    padding: 3rem 0 2.25rem 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+  }
+
+  .locations-hero-title,
+  .locations-hero-section h1 {
+    font-size: 1.68rem !important;
+    line-height: 1.2 !important;
+    margin: 0.6rem 0 0.8rem 0 !important;
+    letter-spacing: -0.01em !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .locations-hero-lead,
+  .locations-hero-section p {
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .locations-status-ticker {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.85rem 0.75rem !important;
+    margin-top: 1.25rem !important;
+    gap: 0.4rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .status-ticker-badge {
+    font-size: 0.82rem !important;
+    gap: 0.35rem !important;
+  }
+
+  .ticker-item {
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Flagship Location Cards */
+  .locations-cards-section {
+    padding: 3rem 0 !important;
+  }
+
+  .location-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .location-media {
+    height: 220px !important;
+  }
+
+  .location-body {
+    padding: 1.15rem 0.85rem !important;
+  }
+
+  .location-title {
+    font-size: 1.28rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .location-address {
+    font-size: 0.82rem !important;
+    margin-bottom: 0.85rem !important;
+    gap: 0.3rem !important;
+  }
+
+  .location-detail-item {
+    font-size: 0.8rem !important;
+    padding: 0.45rem 0 !important;
+  }
+
+  .location-detail-item .detail-label {
+    font-size: 0.78rem !important;
+  }
+
+  .location-detail-item .detail-value {
+    font-size: 0.82rem !important;
+  }
+
+  .location-actions-row {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.55rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .location-actions-row a {
+    width: 100% !important;
+    padding: 0.65rem 0.75rem !important;
+    font-size: 0.84rem !important;
+    text-align: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Batch Freshness Schedule Card & Table */
+  .locations-schedule-section {
+    padding: 3rem 0 !important;
+  }
+
+  .batch-schedule-card {
+    padding: 0.85rem 0.6rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .batch-schedule-table {
+    min-width: 275px !important;
+  }
+
+  .batch-schedule-table th,
+  .batch-schedule-table td {
+    padding: 0.5rem 0.2rem !important;
+  }
+
+  .batch-schedule-table th {
+    font-size: 0.72rem !important;
+  }
+
+  .batch-schedule-table td.batch-title {
+    font-size: 0.75rem !important;
+  }
+
+  .batch-schedule-table td.batch-time-cell {
+    font-size: 0.74rem !important;
+  }
+
+  .badge-fresh-tag {
+    padding: 0.06rem 0.28rem !important;
+    font-size: 0.62rem !important;
+  }
+
+  .batch-piping-footer {
+    font-size: 0.74rem !important;
+  }
+
+  /* Amenities Cards */
+  .locations-amenities-section {
+    padding: 3rem 0 !important;
+  }
+
+  .amenity-card {
+    padding: 1.15rem 0.85rem !important;
+  }
+
+  .amenity-title {
+    font-size: 1.15rem !important;
+  }
+
+  .amenity-desc {
+    font-size: 0.86rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Section & CTA Headings Across All Pages */
+  .section-title {
+    font-size: 1.55rem !important;
+    line-height: 1.22 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .section-lead,
+  .section-subtitle,
+  .section-desc,
+  .section-head p {
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .cta-title {
+    font-size: 1.55rem !important;
+    line-height: 1.22 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .cta-desc {
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .cta-button-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.6rem !important;
+  }
+
+  .cta-button-group .btn-primary,
+  .cta-button-group .btn-secondary,
+  .cta-button-group .btn-dark-secondary {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 0.75rem 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Menu Page Hero & Tiers on 360px */
+  .menu-hero-title,
+  .menu-hero-section h1 {
+    font-size: 1.68rem !important;
+    line-height: 1.2 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .menu-box-cta-title {
+    font-size: 1.55rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .event-cta-title {
+    font-size: 1.55rem !important;
+    line-height: 1.22 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .hero-title,
+  .home2-hero-title {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .home2-box-title {
+    font-size: 1.5rem !important;
+    line-height: 1.22 !important;
+  }
+
+  /* Footer on Samsung Galaxy A55 */
+  .footer-legal-links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 0.45rem 0.75rem !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .footer-legal-links a {
+    font-size: 0.74rem !important;
+    white-space: nowrap !important;
+  }
+
+  .footer-grid > div:last-child form {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .footer-grid > div:last-child form input[type="email"] {
+    width: 100% !important;
+    font-size: 0.86rem !important;
+    padding: 0.72rem 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .footer-grid > div:last-child form button[type="submit"] {
+    width: 100% !important;
+    font-size: 0.85rem !important;
+    padding: 0.72rem 1rem !important;
+    box-sizing: border-box !important;
   }
 }
 

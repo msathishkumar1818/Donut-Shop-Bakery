@@ -85,6 +85,9 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -93,16 +96,21 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   min-height: 100%;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  position: relative;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   padding-top: var(--header-height); /* accounts for fixed slim header */
 }
 
-/* Ensure no horizontal scrollbar */
+/* Ensure no horizontal scrollbar across all viewports */
 body, html {
   max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Typography Defaults */
@@ -112,6 +120,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
   font-weight: 700;
   letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 p {
@@ -2381,6 +2391,44 @@ button:focus-visible, a:focus-visible {
   color: #FFFDF8;
   padding: 4.5rem 0 3.5rem 0;
   text-align: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.menu-hero-title {
+  font-size: 3.2rem;
+  color: #FFFDF8;
+  margin: 0.75rem 0 1rem 0;
+  line-height: 1.15;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.menu-box-cta-title {
+  font-size: 2.65rem;
+  color: #FFFDF8;
+  line-height: 1.2;
+  margin: 0.5rem 0 1rem 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.event-cta-title {
+  font-size: 2.85rem;
+  color: #FFFDF8;
+  line-height: 1.2;
+  margin: 0.5rem 0 1.25rem 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.home2-box-title {
+  font-size: 2.2rem;
+  color: #FFFDF8;
+  margin-bottom: 0.85rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 [data-theme="dark"] .menu-hero-section {
@@ -2905,6 +2953,26 @@ button:focus-visible, a:focus-visible {
   color: #FFFDF8;
   padding: 5rem 0 4rem 0;
   text-align: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.locations-hero-title {
+  font-size: 3.3rem;
+  color: #FFFDF8;
+  margin: 0.85rem 0 1rem 0;
+  line-height: 1.15;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.locations-hero-lead {
+  font-size: 1.1rem;
+  color: var(--color-beige);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.65;
 }
 
 [data-theme="dark"] .locations-hero-section {
@@ -2924,6 +2992,8 @@ button:focus-visible, a:focus-visible {
   margin-top: 2rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .status-ticker-badge {
