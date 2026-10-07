@@ -185,24 +185,28 @@
   }
 
   .team-card .team-name {
-    font-size: 1.45rem !important;
+    font-size: 1.35rem !important;
   }
 
   .team-card .team-role {
-    font-size: 0.92rem !important;
-    letter-spacing: 0.08em !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.06em !important;
+    white-space: nowrap !important;
+    min-height: 1.25rem !important;
   }
 
   .team-card .team-bio {
-    font-size: 1.06rem !important;
-    line-height: 1.7 !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
     color: #2D1A12 !important;
+    min-height: 5.2rem !important;
   }
 
   .team-specialty-tag {
-    font-size: 0.86rem !important;
-    padding: 0.38rem 0.95rem !important;
+    font-size: 0.8rem !important;
+    padding: 0.32rem 0.85rem !important;
     font-weight: 700 !important;
+    white-space: nowrap !important;
   }
 
   /* 6. Locations Page Sections (locations.html) */
@@ -291,11 +295,16 @@
     font-weight: 700 !important;
   }
 
+  .contact-field-group input,
   .contact-field-group .auth-form-input,
   .contact-field-group select,
-  .custom-select-trigger {
-    font-size: 1.02rem !important;
-    padding: 0.85rem 1.15rem !important;
+  .custom-select-trigger,
+  .custom-datepicker-trigger {
+    font-size: 0.95rem !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0 1rem !important;
+    box-sizing: border-box !important;
   }
 
   .btn-contact-submit {
@@ -1217,13 +1226,18 @@
 /* ==========================================================================
    MENU PAGE RESPONSIVE RULES
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .menu-grid-three {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .menu-grid-wide {
     grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .menu-wide-card {
+    grid-template-columns: 240px 1fr;
   }
 
   .menu-box-cta-grid {
@@ -1249,6 +1263,7 @@
 
   .menu-wide-media {
     height: 220px;
+    min-height: 220px;
     max-height: 220px;
   }
 
@@ -1491,7 +1506,7 @@
 
   .form-row-dual {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 1.25rem;
   }
 
   .concierge-contact-rows {
