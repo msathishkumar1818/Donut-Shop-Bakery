@@ -884,5 +884,27 @@
     initScrollAnimations();
     initCustomSelects();
     initCustomDatePicker();
+    initCardOrderActions();
   });
+
+  // Add to Box interactive feedback on flavor cards
+  function initCardOrderActions() {
+    const cardButtons = document.querySelectorAll('button.btn-card-order');
+    cardButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Added to Box!';
+        btn.style.background = 'linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%)';
+        btn.style.color = '#FFFDF8';
+        btn.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 1500);
+      });
+    });
+  }
 })();

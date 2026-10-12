@@ -30,7 +30,13 @@
     display: inline-flex !important; /* Hamburger menu button visible on iPad Pro, iPad Pro 13 & all tablets */
   }
 
-  /* Hide login button from header on tablet/mobile — accessible via offcanvas drawer */
+  /* Header Primary CTA visible on tablet breakpoints (768px - 1380px) */
+  .btn-header-cta {
+    display: inline-flex !important;
+    padding: 0.45rem 1.05rem !important;
+    font-size: 0.82rem !important;
+  }
+
   .btn-login {
     display: none !important;
   }
@@ -457,6 +463,10 @@
     --header-height: 58px;
   }
 
+  .btn-header-cta {
+    display: none !important;
+  }
+
   .header-brand-title {
     font-size: 0.95rem;
   }
@@ -806,7 +816,8 @@
     font-size: 0.72rem;
   }
 
-  /* Mobile drawer login button compact sizing on small phones */
+  /* Mobile drawer CTA button compact sizing on small phones */
+  .mobile-drawer-cta,
   .mobile-drawer-login {
     padding: 0.85rem 1.25rem;
     font-size: 0.95rem;

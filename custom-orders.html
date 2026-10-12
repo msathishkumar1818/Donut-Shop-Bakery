@@ -111,13 +111,15 @@
           </button>
         </div>
 
-        <a href="login.html" class="btn-login" aria-label="Member Sign In">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        <!-- Primary Header CTA: Order Online -->
+        <a href="menu.html" class="btn-header-cta" aria-label="Order Online">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
             stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
           </svg>
-          <span>Login</span>
+          <span>Order Online</span>
         </a>
 
         <button class="btn-menu-toggle" aria-label="Open Navigation Menu" type="button">
@@ -189,63 +191,18 @@
       </nav>
 
       <div class="mobile-nav-footer">
-        <a href="login.html" class="mobile-drawer-login">Sign In / Login</a>
+        <a href="menu.html" class="mobile-drawer-cta" aria-label="Order Online">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round" style="width:18px;height:18px;">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span>Order Online</span>
+        </a>
       </div>
     </div>
   </aside>
-
-  <!-- AUTH MODAL -->
-  <div class="auth-modal-overlay" id="authModal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="auth-modal-card">
-      <button class="auth-modal-close" aria-label="Close Dialog" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" style="width:18px;height:18px;">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-      <div class="auth-modal-header">
-        <h3 style="font-size:1.4rem;">Event Host Login</h3>
-        <p style="font-size:0.88rem;margin-top:0.35rem;">Manage event catering quotes, date holds, and tasting logs.</p>
-        <div class="auth-modal-tabs">
-          <button class="auth-tab-btn active" data-tab="login" type="button">Sign In</button>
-          <button class="auth-tab-btn" data-tab="register" type="button">Create Account</button>
-        </div>
-      </div>
-      <div class="auth-modal-body">
-        <form id="modal-login-form"
-          onsubmit="event.preventDefault(); alert('Signed in!'); document.querySelector('.auth-modal-overlay').classList.remove('open');">
-          <div class="auth-form-group">
-            <label class="auth-form-label" for="co-login-email">Email Address</label>
-            <input class="auth-form-input" type="email" id="co-login-email" placeholder="host@weddingplanner.com"
-              required>
-          </div>
-          <div class="auth-form-group">
-            <label class="auth-form-label" for="co-login-password">Password</label>
-            <input class="auth-form-input" type="password" id="co-login-password" placeholder="••••••••" required>
-          </div>
-          <button type="submit" class="auth-submit-btn">Sign In to Event Portal</button>
-        </form>
-
-        <form id="modal-register-form" style="display:none;"
-          onsubmit="event.preventDefault(); alert('Account registered!'); document.querySelector('.auth-modal-overlay').classList.remove('open');">
-          <div class="auth-form-group">
-            <label class="auth-form-label" for="co-reg-name">Planner / Host Name</label>
-            <input class="auth-form-input" type="text" id="co-reg-name" placeholder="Claire Sterling" required>
-          </div>
-          <div class="auth-form-group">
-            <label class="auth-form-label" for="co-reg-email">Email Address</label>
-            <input class="auth-form-input" type="email" id="co-reg-email" placeholder="claire@events.com" required>
-          </div>
-          <div class="auth-form-group">
-            <label class="auth-form-label" for="co-reg-password">Password</label>
-            <input class="auth-form-input" type="password" id="co-reg-password" placeholder="••••••••" required>
-          </div>
-          <button type="submit" class="auth-submit-btn">Register as Event Partner</button>
-        </form>
-      </div>
-    </div>
-  </div>
 
   <!-- ==========================================================================
        MAIN CONTENT: EXACTLY 5 MAIN CONTENT SECTIONS (INNER PAGE: CUSTOM ORDERS)

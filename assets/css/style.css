@@ -529,35 +529,52 @@ a:focus-visible {
   font-weight: 800;
 }
 
-/* Login Button (Luxury Amber Pill linking to login.html) */
+/* Primary Header CTA (Order Online - Luxury Amber Action Pill) */
+.btn-header-cta,
 .btn-login {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   background: linear-gradient(135deg, #E58A22 0%, #D37B1B 100%);
-  color: #FFFDF8;
+  color: #FFFDF8 !important;
+  font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.86rem;
-  padding: 0.48rem 1.2rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  padding: 0.52rem 1.3rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 14px rgba(229, 138, 34, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(229, 138, 34, 0.36);
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
+.btn-header-cta:hover,
 .btn-login:hover {
   background: linear-gradient(135deg, #F59A30 0%, #E58A22 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(229, 138, 34, 0.5);
-  color: #FFFDF8;
+  box-shadow: 0 6px 22px rgba(229, 138, 34, 0.52);
+  color: #FFFDF8 !important;
 }
 
+.btn-header-cta:active,
+.btn-login:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(229, 138, 34, 0.35);
+}
+
+.btn-header-cta svg,
 .btn-login svg {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.btn-header-cta:hover svg {
+  transform: scale(1.12);
 }
 
 /* Mobile Toggle Hamburger Button */
@@ -769,12 +786,13 @@ a:focus-visible {
   margin-top: auto;
 }
 
-/* Mobile & Tablet Offcanvas Drawer Login Button (Prominently visible on iPad Pro 13, iPad Pro, iPad Mini & phones) */
+/* Mobile & Tablet Offcanvas Drawer Primary CTA Button (Order Online) */
+.mobile-drawer-cta,
 .mobile-drawer-login {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   width: 100%;
   padding: 0.95rem 1.5rem;
   background: linear-gradient(135deg, #E58A22 0%, #D37B1B 100%);
@@ -782,9 +800,9 @@ a:focus-visible {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   box-shadow: 0 4px 16px rgba(229, 138, 34, 0.38);
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -792,6 +810,7 @@ a:focus-visible {
   text-align: center;
 }
 
+.mobile-drawer-cta:hover,
 .mobile-drawer-login:hover {
   background: linear-gradient(135deg, #F59A30 0%, #E58A22 100%);
   transform: translateY(-2px);
@@ -799,6 +818,7 @@ a:focus-visible {
   color: #FFFDF8 !important;
 }
 
+[data-theme="dark"] .mobile-drawer-cta,
 [data-theme="dark"] .mobile-drawer-login {
   background: linear-gradient(135deg, #E58A22 0%, #D37B1B 100%);
   border-color: rgba(229, 138, 34, 0.4);
